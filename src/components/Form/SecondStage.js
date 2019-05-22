@@ -6,6 +6,8 @@ import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
     button: {
@@ -24,6 +26,16 @@ const styles = theme => ({
         marginLeft: theme.spacing(1),
         marginRight: theme.spacing(1),
     },
+    datePicker: {
+        marginTop: 40,
+    },
+    error: {
+        color: '#b2102f',
+    },
+    paper: {
+        textAlign: 'center',
+        padding: theme.spacing(2),
+    },
 });
 
 class SecondStage extends Component {
@@ -35,6 +47,7 @@ class SecondStage extends Component {
             buyPrice: 0,
             envy: 0,
             cuantity: 0,
+            name: '',
         };
     }
 
@@ -43,7 +56,12 @@ class SecondStage extends Component {
     };
 
     handleChangeStage = () => {
-        this.props.changeStage({ stage: 'menu' });
+        const { name, edition } = this.state;
+        if (name === '' || edition === 0) {
+            this.setState({ showError: true });
+        } else {
+            this.props.changeStage({ stage: 'menu' });
+        }
     };
 
     render() {
@@ -60,7 +78,9 @@ class SecondStage extends Component {
                         required
                         id='name'
                         label='Nombre'
-                        placeholder='!HOLA'
+                        placeholder='Nombre de publicacion'
+                        value={this.state.name}
+                        onChange={this.handleChange('name')}
                         className={classes.textField}
                         margin='normal'
                         variant='outlined'
@@ -69,6 +89,7 @@ class SecondStage extends Component {
 
                 <Grid item xs={12}>
                     <TextField
+                        required
                         id='standard-number'
                         label='Edicion'
                         value={this.state.edition}
@@ -166,6 +187,23 @@ class SecondStage extends Component {
                         margin='normal'
                     />
                 </Grid>
+
+                {this.state.showError ? (
+                    <Grid item xs={12} className={classes.datePicker}>
+                        <Paper elevation={1} className={classes.paper}>
+                            <Typography
+                                variant='h6'
+                                className={classes.error}
+                                component='h3'>
+                                ¡Hubo un error!
+                            </Typography>
+                            <Typography component='p'>
+                                Intente ingresar los datos nuevamente o reinicie
+                                la aplicacion.
+                            </Typography>
+                        </Paper>
+                    </Grid>
+                ) : null}
 
                 <Grid item xs={12}>
                     <Button

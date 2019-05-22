@@ -21,7 +21,7 @@ const styles = {
     },
 };
 
-function TopAppBar(props) {
+const TopAppBar = props => {
     const { classes, callBack, title, LRButton } = props;
     return (
         <div className={classes.root}>
@@ -45,7 +45,7 @@ function TopAppBar(props) {
             </AppBar>
         </div>
     );
-}
+};
 
 TopAppBar.propTypes = {
     classes: PropTypes.object.isRequired,

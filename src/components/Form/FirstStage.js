@@ -17,7 +17,7 @@ const styles = theme => ({
         marginLeft: theme.spacing(1),
     },
     datePicker: {
-        marginTop: 40,
+        marginTop: 10,
     },
     error: {
         color: '#b2102f',

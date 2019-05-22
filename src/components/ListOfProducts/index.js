@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -47,24 +47,17 @@ function generate(elements) {
     });
 }
 
-class ListOfProducts extends Component {
-    state = {
-        dense: false,
-    };
-    render() {
-        const { classes, items } = this.props;
-        const { dense } = this.state;
-        return (
-            <div>
-                <Grid item xs={12} md={6}>
-                    <div className={classes.demo}>
-                        <List dense={dense}>{generate(items)}</List>
-                    </div>
-                </Grid>
-            </div>
-        );
-    }
-}
+const ListOfProducts = props => {
+    return (
+        <div>
+            <Grid item xs={12} md={6}>
+                <div className={props.classes.demo}>
+                    <List dense={false}>{generate(props.items)}</List>
+                </div>
+            </Grid>
+        </div>
+    );
+};
 
 ListOfProducts.propTypes = {
     classes: PropTypes.object.isRequired,
