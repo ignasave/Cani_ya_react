@@ -7,6 +7,7 @@ import { DatePicker } from '@material-ui/pickers';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
     button: {
@@ -120,4 +121,7 @@ class FirstStage extends Component {
     }
 }
 
+FirstStage.propTypes = {
+    classes: PropTypes.object.isRequired,
+}
 export default withStyles(styles)(FirstStage);

@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 
 const items = [
     {
@@ -88,6 +89,12 @@ class BoxOpened extends Component {
             </div>
         );
     }
+}
+
+BoxOpened.propTypes = {
+    classes: PropTypes.object.isRequired,
+    date: PropTypes.string.isRequired,
+    provider: PropTypes.string.isRequired,
 }
 
 export default withStyles(styles)(BoxOpened);

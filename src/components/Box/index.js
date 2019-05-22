@@ -64,6 +64,8 @@ class Box extends React.Component {
 
 Box.propTypes = {
     classes: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    childrens: PropTypes.array.isRequired,
 };
 
 export default withStyles(styles)(Box);

@@ -44,6 +44,7 @@ class Boxes extends React.Component {
 
 Boxes.propTypes = {
     classes: PropTypes.object.isRequired,
+    boxes: PropTypes.array.isRequired,
 };
 
 export default withStyles(styles)(Boxes);

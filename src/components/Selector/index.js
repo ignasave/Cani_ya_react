@@ -41,7 +41,7 @@ class Selector extends Component {
     };
 
     render() {
-        const { classes, name, items } = this.props;
+        const { classes, name, items, value } = this.props;
         return (
             <FormControl variant='outlined' className={classes.formControl}>
                 <InputLabel
@@ -52,7 +52,7 @@ class Selector extends Component {
                     {name}
                 </InputLabel>
                 <Select
-                    value={this.props.value}
+                    value={value}
                     onChange={this.handleChange}
                     input={
                         <OutlinedInput
@@ -78,6 +78,7 @@ Selector.propTypes = {
     classes: PropTypes.object.isRequired,
     name: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
+    value: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(Selector);

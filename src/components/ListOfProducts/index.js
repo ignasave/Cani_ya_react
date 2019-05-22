@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Divider } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
     root: {
@@ -64,5 +65,10 @@ class ListOfProducts extends Component {
         );
     }
 }
+
+ListOfProducts.propTypes = {
+    classes: PropTypes.object.isRequired,
+    items: PropTypes.array.isRequired,
+};
 
 export default withStyles(styles)(ListOfProducts);
