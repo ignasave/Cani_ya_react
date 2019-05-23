@@ -7,20 +7,7 @@ import Select from '@material-ui/core/Select';
 import ReactDOM from 'react-dom';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-
-const styles = theme => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 195,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
-});
+import { styles } from './styles';
 
 class Selector extends Component {
     constructor(props) {

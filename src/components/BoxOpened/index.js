@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
+import { styles } from './styles';
 
 const items = [
     {
@@ -26,22 +27,6 @@ const items = [
     },
 ];
 
-const styles = theme => ({
-    title: {
-        marginTop: 15,
-    },
-    margin: {
-        margin: theme.spacing(1),
-        marginTop: theme.spacing(3),
-        display: 'inline-block',
-    },
-    extendedIcon: {
-        marginRight: theme.spacing(1),
-    },
-    container: {
-        textAlign: 'center',
-    },
-});
 
 class BoxOpened extends Component {
     state = {
@@ -50,6 +35,10 @@ class BoxOpened extends Component {
 
     handleChangeStage = () => {
         this.props.changeStage({ stage: 'second' });
+    };
+
+    handleCloseBox = () => {
+        this.props.handleShowForm();
     };
 
     render() {
@@ -74,7 +63,8 @@ class BoxOpened extends Component {
                     variant='contained'
                     color='primary'
                     aria-label='Close'
-                    className={classes.margin}>
+                    className={classes.margin}
+                    onClick={this.handleCloseBox}>
                     <SaveAlt className={classes.extendedIcon} />
                     Cerrar esta caja
                 </Button>
@@ -95,6 +85,6 @@ BoxOpened.propTypes = {
     classes: PropTypes.object.isRequired,
     date: PropTypes.string.isRequired,
     provider: PropTypes.string.isRequired,
-}
+};
 
 export default withStyles(styles)(BoxOpened);

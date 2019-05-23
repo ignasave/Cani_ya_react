@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import FirstStage from './FirstStage';
-import SecondStage from './SecondStage';
+import FirstStage from './FirstStage/';
+import SecondStage from './SecondStage/';
 import BoxOpened from '../BoxOpened';
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            stage: 'first',
-            date: null,
-            provider: null,
-        };
-    }
+    state = {
+        stage: 'first',
+        date: null,
+        provider: null,
+    };
 
     handleStageChange = data => {
         if (data.date && data.provider) {
@@ -19,6 +16,10 @@ class Form extends Component {
         }
         this.setState({ stage: data.stage });
     };
+
+    handleShowForm() {
+        this.props.handleMostrarForm();
+    }
 
     render() {
         return (
@@ -30,6 +31,7 @@ class Form extends Component {
                         date={this.state.date}
                         provider={this.state.provider}
                         changeStage={this.handleStageChange}
+                        handleShowForm={this.handleShowForm.bind(this)}
                     />
                 ) : this.state.stage === 'second' ? (
                     <SecondStage changeStage={this.handleStageChange} />

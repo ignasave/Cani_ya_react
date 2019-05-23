@@ -5,13 +5,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import Box from '../Box';
 import { Divider } from '@material-ui/core';
-
-const styles = theme => ({
-    root: {
-        width: '100%',
-        backgroundColor: theme.palette.background.paper,
-    },
-});
+import { styles } from './styles';
 
 const makeBoxes = items => {
     return items.map((element, index) => {

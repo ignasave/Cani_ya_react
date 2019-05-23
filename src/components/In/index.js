@@ -13,15 +13,19 @@ class In extends Component {
         };
     }
 
-    handleClickNewBox() {
+    handleClickNewBox = () => {
         this.setState({ showForm: true });
-    }
+    };
+
+    handleShowForm = () => {
+        this.setState({ showForm: false });
+    };
 
     render() {
         return (
             <div>
                 {this.state.showForm ? (
-                    <Form />
+                    <Form handleMostrarForm={this.handleShowForm}/>
                 ) : (
                     <div>
                         <BoxesOnInventory />

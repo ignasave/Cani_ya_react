@@ -10,16 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Divider } from '@material-ui/core';
 import PropTypes from 'prop-types';
-
-const styles = theme => ({
-    root: {
-        flexGrow: 1,
-        maxWidth: 752,
-    },
-    demo: {
-        backgroundColor: theme.palette.background.paper,
-    },
-});
+import { styles } from './styles';
 
 function generate(elements) {
     return elements.map((element, index) => {

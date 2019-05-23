@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Selector from '../Selector';
+import Selector from '../../Selector';
 import Send from '@material-ui/icons/Send';
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
@@ -8,25 +8,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
+import { styles } from './styles';
 
-const styles = theme => ({
-    button: {
-        margin: theme.spacing(1),
-    },
-    rightIcon: {
-        marginLeft: theme.spacing(1),
-    },
-    datePicker: {
-        marginTop: 10,
-    },
-    error: {
-        color: '#b2102f',
-    },
-    paper: {
-        textAlign: 'center',
-        padding : theme.spacing(2)
-    },
-});
 
 class FirstStage extends Component {
     constructor(props) {
@@ -70,6 +53,7 @@ class FirstStage extends Component {
                     direction='column'
                     justify='center'
                     alignItems='center'>
+                        
                     {this.state.showError ? (
                         <Grid item xs={12} className={classes.datePicker}>
                             <Paper elevation={1} className={classes.paper}>
@@ -86,6 +70,7 @@ class FirstStage extends Component {
                             </Paper>
                         </Grid>
                     ) : null}
+
                     <Grid item xs={12} className={classes.datePicker}>
                         <DatePicker
                             label='Fecha: '

@@ -3,24 +3,30 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { RoutesConfig } from '../RouteSetup';
+import { withStyles } from '@material-ui/core';
+import { styles } from './styles';
 
-const MakeList = () => {
-  return RoutesConfig.map((item) => (
-    <ListItem button key={ item.route }>
-      <ListItemIcon>{ item.icon }</ListItemIcon>
-      <ListItemText primary={ item.name } />
-    </ListItem>
-  ))
+const MakeList = (classes) => {
+    return RoutesConfig.map((item, index) => (
+        <Link to={item.route} key={index} className={classes.link}>
+            <ListItem button>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.name} />
+            </ListItem>
+        </Link>
+    ));
+};
+
+function SideList(props) {
+    return (
+        <div>
+            <List>{MakeList(props.classes)}</List>
+            <Divider />
+        </div>
+    );
 }
 
-export default function SideList() {
-    return(
-    <div>
-      <List>
-          { MakeList() }
-      </List>
-      <Divider/>
-    </div>
-  );}
+export default withStyles(styles)(SideList)

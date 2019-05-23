@@ -9,12 +9,8 @@ import Collapse from '@material-ui/core/Collapse';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-
-const styles = theme => ({
-    nested: {
-        paddingLeft: theme.spacing(6),
-    },
-});
+import { Typography } from '@material-ui/core';
+import { styles } from './styles';
 
 class Box extends React.Component {
     state = {
@@ -45,7 +41,7 @@ class Box extends React.Component {
     };
 
     render() {
-        const { title, childrens } = this.props;
+        const { title, childrens, classes } = this.props;
 
         return (
             <Fragment>
@@ -53,7 +49,18 @@ class Box extends React.Component {
                     <ListItemIcon>
                         <InboxIcon />
                     </ListItemIcon>
-                    <ListItemText inset primary={title} />
+                    <ListItemText
+                        inset
+                        className={classes.title}
+                        primary={
+                            <Typography
+                                variant='h6'
+                                className={classes.typography}
+                                gutterBottom>
+                                {title}
+                            </Typography>
+                        }
+                    />
                     {this.state.open ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
                 {this.makeChildrens(childrens)}
