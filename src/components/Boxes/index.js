@@ -22,6 +22,7 @@ const makeBoxes = items => {
 };
 
 const Boxes = props => {
+    const { classes, boxes } = props;
     return (
         <List
             component='nav'
@@ -30,8 +31,8 @@ const Boxes = props => {
                     Historial de cajas
                 </ListSubheader>
             }
-            className={props.classes.root}>
-            {makeBoxes(props.boxes)}
+            className={classes.root}>
+            {makeBoxes(boxes)}
         </List>
     );
 };

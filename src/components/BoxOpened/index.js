@@ -38,7 +38,7 @@ class BoxOpened extends Component {
     };
 
     handleCloseBox = () => {
-        this.props.handleShowForm();
+        this.props.handleShowForm(false);
     };
 
     render() {

@@ -17,8 +17,8 @@ class Form extends Component {
         this.setState({ stage: data.stage });
     };
 
-    handleShowForm() {
-        this.props.handleMostrarForm();
+    handleShowForm = (state) => {
+        this.props.handleMostrarForm(state);
     }
 
     render() {
