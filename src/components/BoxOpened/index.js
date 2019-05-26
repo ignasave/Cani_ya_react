@@ -41,6 +41,10 @@ class BoxOpened extends Component {
         this.props.handleShowForm(false);
     };
 
+    handleInitial = (data) => {
+        this.props.handleChangeInitial(data)
+    }
+
     render() {
         const { date, provider, classes } = this.props;
         return (
@@ -57,7 +61,7 @@ class BoxOpened extends Component {
                     {date}
                 </Typography>
 
-                <ListOfProducts items={items} />
+                <ListOfProducts items={items} handleChangeInitial={this.handleInitial}/>
 
                 <Button
                     variant='contained'

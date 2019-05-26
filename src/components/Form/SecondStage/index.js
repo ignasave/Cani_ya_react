@@ -14,12 +14,12 @@ class SecondStage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            edition: 1,
-            publicPrice: 0,
-            buyPrice: 0,
-            envy: 0,
-            cuantity: 0,
-            name: '',
+            edition: props.initial.edition,
+            publicPrice: props.initial.publicPrice,
+            buyPrice: props.initial.buyPrice,
+            envy: props.initial.envy,
+            cuantity: props.initial.cuantity,
+            name: props.initial.name,
         };
     }
 
