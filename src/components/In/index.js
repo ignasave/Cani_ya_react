@@ -13,13 +13,10 @@ class In extends Component {
         };
     }
 
-    handleClickNewBox = () => {
-        this.setState({ showForm: true });
+    handleShowForm = (state) => {
+        this.setState({ showForm: state });
     };
 
-    handleShowForm = () => {
-        this.setState({ showForm: false });
-    };
 
     render() {
         return (
@@ -34,7 +31,7 @@ class In extends Component {
                             aria='add'
                             icon={this.state.icon}
                             tooltip={'Abre una nueva caja'}
-                            clickHandler={this.handleClickNewBox.bind(this)}
+                            clickHandler={() => {this.handleShowForm(true)}}
                         />
                     </div>
                 )}
