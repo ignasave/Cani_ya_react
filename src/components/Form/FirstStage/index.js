@@ -30,13 +30,14 @@ class FirstStage extends Component {
     };
 
     handleChangeStage = () => {
-        if (this.state.selectedDate && this.state.provider !== '') {
-            const transformedDate = `${this.state.selectedDate.getDate()}-${this.state.selectedDate.getMonth()}-${this.state.selectedDate.getFullYear()}`;
+        const { selectedDate, provider } = this.state;
+        if (selectedDate && provider !== '') {
+            const transformedDate = `${selectedDate.getDate()}-${selectedDate.getMonth()}-${selectedDate.getFullYear()}`;
 
             this.props.changeStage({
                 stage: 'menu',
                 date: transformedDate,
-                provider: this.state.provider,
+                provider: provider,
             });
         } else {
             this.setState({ showError: true });
@@ -45,6 +46,7 @@ class FirstStage extends Component {
 
     render() {
         const { classes } = this.props;
+        const { showError, selectedDate, provider } = this.state;
         return (
             <div>
                 <Grid
@@ -54,7 +56,7 @@ class FirstStage extends Component {
                     justify='center'
                     alignItems='center'>
                         
-                    {this.state.showError ? (
+                    {showError ? (
                         <Grid item xs={12} className={classes.datePicker}>
                             <Paper elevation={1} className={classes.paper}>
                                 <Typography
@@ -74,7 +76,7 @@ class FirstStage extends Component {
                     <Grid item xs={12} className={classes.datePicker}>
                         <DatePicker
                             label='Fecha: '
-                            value={this.state.selectedDate}
+                            value={selectedDate}
                             onChange={this.handleDateChange}
                             views={['day', 'month', 'year']}
                             variant='dialog'
@@ -84,7 +86,7 @@ class FirstStage extends Component {
                     <Grid item xs={12}>
                         <Selector
                             onChange={this.handleProviderChange}
-                            value={this.state.provider}
+                            value={provider}
                             name='Proveedor'
                             items={['', 'Clarin', 'Palena', 'Nacion']}
                         />

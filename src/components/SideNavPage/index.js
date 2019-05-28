@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 
-const SwipeableTemporaryDrawer = props => {
-    const { sideList, callBack, isOpen } = props;
-
+const SwipeableTemporaryDrawer = ({ sideList, callBack, isOpen }) => {
     return (
         <div>
             <SwipeableDrawer

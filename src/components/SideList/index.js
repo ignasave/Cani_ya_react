@@ -20,10 +20,10 @@ const MakeList = (classes) => {
     ));
 };
 
-function SideList(props) {
+function SideList({ classes }) {
     return (
         <div>
-            <List>{MakeList(props.classes)}</List>
+            <List>{MakeList(classes)}</List>
             <Divider />
         </div>
     );

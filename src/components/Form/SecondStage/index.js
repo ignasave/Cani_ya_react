@@ -14,12 +14,12 @@ class SecondStage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            edition: props.initial.edition,
-            publicPrice: props.initial.publicPrice,
-            buyPrice: props.initial.buyPrice,
-            envy: props.initial.envy,
-            cuantity: props.initial.cuantity,
-            name: props.initial.name,
+            edition: 1,
+            publicPrice: 0,
+            buyPrice: 0,
+            envy: 0,
+            cuantity: 1,
+            name: '',
         };
     }
 
@@ -38,6 +38,14 @@ class SecondStage extends Component {
 
     render() {
         const { classes } = this.props;
+        const {
+            name,
+            edition,
+            publicPrice,
+            buyPrice,
+            envy,
+            cuantity,
+        } = this.state;
         return (
             <Grid
                 container
@@ -51,7 +59,7 @@ class SecondStage extends Component {
                         id='name'
                         label='Nombre'
                         placeholder='Nombre de publicacion'
-                        value={this.state.name}
+                        value={name}
                         onChange={this.handleChange('name')}
                         className={classes.textField}
                         margin='normal'
@@ -64,7 +72,7 @@ class SecondStage extends Component {
                         required
                         id='standard-number'
                         label='Edicion'
-                        value={this.state.edition}
+                        value={edition}
                         onChange={this.handleChange('edition')}
                         type='number'
                         className={classes.textField}
@@ -94,7 +102,7 @@ class SecondStage extends Component {
                         variant='outlined'
                         label='Precio Publico'
                         className={classes.textField}
-                        value={this.state.publicPrice}
+                        value={publicPrice}
                         onChange={this.handleChange('publicPrice')}
                         InputProps={{
                             startAdornment: (
@@ -113,7 +121,7 @@ class SecondStage extends Component {
                         variant='outlined'
                         label='Precio Compra'
                         className={classes.textField}
-                        value={this.state.buyPrice}
+                        value={buyPrice}
                         onChange={this.handleChange('buyPrice')}
                         InputProps={{
                             startAdornment: (
@@ -130,9 +138,9 @@ class SecondStage extends Component {
                         id='outlined-adornment-amount'
                         margin='normal'
                         variant='outlined'
-                        label='Precio Publico'
+                        label='Envio'
                         className={classes.textField}
-                        value={this.state.envy}
+                        value={envy}
                         onChange={this.handleChange('envy')}
                         InputProps={{
                             startAdornment: (
@@ -148,7 +156,7 @@ class SecondStage extends Component {
                     <TextField
                         id='standard-number'
                         label='Cantidad'
-                        value={this.state.cuantity}
+                        value={cuantity}
                         onChange={this.handleChange('cuantity')}
                         type='number'
                         className={classes.textField}

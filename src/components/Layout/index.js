@@ -18,17 +18,18 @@ class Layout extends Component {
     };
 
     render() {
+        const { title, LoginRegister, isOpen } = this.state;
         return (
             <div>
                 <TopAppBar
-                    title={this.state.title}
+                    title={title}
                     callBack={this.toggleDrawer(true)}
-                    LRButton={this.state.LoginRegister}
+                    LRButton={LoginRegister}
                 />
 
                 <SwipeableTemporaryDrawer
                     sideList={<SideList />}
-                    isOpen={this.state.isOpen}
+                    isOpen={isOpen}
                     callBack={this.toggleDrawer}
                 />
             </div>

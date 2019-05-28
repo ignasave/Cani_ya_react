@@ -41,12 +41,9 @@ class BoxOpened extends Component {
         this.props.handleShowForm(false);
     };
 
-    handleInitial = (data) => {
-        this.props.handleChangeInitial(data)
-    }
-
     render() {
         const { date, provider, classes } = this.props;
+        const { icon } = this.state;
         return (
             <div className={classes.container}>
                 <Typography
@@ -61,7 +58,7 @@ class BoxOpened extends Component {
                     {date}
                 </Typography>
 
-                <ListOfProducts items={items} handleChangeInitial={this.handleInitial}/>
+                <ListOfProducts items={items}/>
 
                 <Button
                     variant='contained'
@@ -76,7 +73,7 @@ class BoxOpened extends Component {
                 <FloatingActionButtons
                     color='secondary'
                     aria='add'
-                    icon={this.state.icon}
+                    icon={icon}
                     tooltip={'Ingresa un nuevo articulo'}
                     clickHandler={this.handleChangeStage}
                 />

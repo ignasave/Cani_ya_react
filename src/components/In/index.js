@@ -17,11 +17,11 @@ class In extends Component {
         this.setState({ showForm: state });
     };
 
-
     render() {
+        const { icon, showForm } = this.state
         return (
             <div>
-                {this.state.showForm ? (
+                {showForm ? (
                     <Form handleMostrarForm={this.handleShowForm}/>
                 ) : (
                     <div>
@@ -29,7 +29,7 @@ class In extends Component {
                         <FloatingActionButtons
                             color='secondary'
                             aria='add'
-                            icon={this.state.icon}
+                            icon={icon}
                             tooltip={'Abre una nueva caja'}
                             clickHandler={() => {this.handleShowForm(true)}}
                         />
