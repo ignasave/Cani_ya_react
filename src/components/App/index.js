@@ -4,7 +4,7 @@ import In from '../In';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
+import Inventory from '../Inventory'
 class App extends Component {
     render() {
         return (
@@ -13,6 +13,7 @@ class App extends Component {
                     <Layout />
 
                     <Route path='/ingreso' component={In} />
+                    <Route path='/inventario' component={Inventory} />
                 </Router>
             </MuiPickersUtilsProvider>
         );

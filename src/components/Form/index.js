@@ -8,14 +8,6 @@ class Form extends Component {
         stage: 'first',
         date: null,
         provider: null,
-        initial: {
-            edition:1,
-            publicPrice: 0,
-            buyPrice: 0,
-            envy: 0,
-            cuantity: 0,
-            name: '',
-        }
     };
 
     handleStageChange = data => {
@@ -25,29 +17,32 @@ class Form extends Component {
         this.setState({ stage: data.stage });
     };
 
-    handleShowForm = (state) => {
+    handleShowForm = state => {
         this.props.handleMostrarForm(state);
-    }
+    };
 
-    handleChangeInitial = (data) => {
-        this.setState({ initial: data })
-    }
+    handleChangeInitial = data => {
+        this.setState({ initial: data });
+    };
 
     render() {
+        const { stage, date, provider, initial } = this.state
         return (
             <div>
-                {this.state.stage === 'first' ? (
+                { stage === 'first' ? (
                     <FirstStage changeStage={this.handleStageChange} />
-                ) : this.state.stage === 'menu' ? (
+                ) : stage === 'menu' ? (
                     <BoxOpened
-                        date={this.state.date}
-                        provider={this.state.provider}
+                        date={date}
+                        provider={provider}
                         changeStage={this.handleStageChange}
                         handleShowForm={this.handleShowForm.bind(this)}
-                        handleChangeInitial={this.handleChangeInitial}
                     />
-                ) : this.state.stage === 'second' ? (
-                    <SecondStage changeStage={this.handleStageChange} initial={this.state.initial}/>
+                ) : stage === 'second' ? (
+                    <SecondStage
+                        changeStage={this.handleStageChange}
+                        initial={initial}
+                    />
                 ) : (
                     <FirstStage changeStage={this.handleStageChange} />
                 )}

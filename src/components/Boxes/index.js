@@ -21,8 +21,7 @@ const makeBoxes = items => {
     });
 };
 
-const Boxes = props => {
-    const { classes, boxes } = props;
+const Boxes = ({ classes, boxes }) => {
     return (
         <List
             component='nav'

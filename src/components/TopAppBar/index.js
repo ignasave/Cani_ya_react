@@ -9,8 +9,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { styles } from './styles';
 
-const TopAppBar = props => {
-    const { classes, callBack, title, LRButton } = props;
+const TopAppBar = ({ classes, callBack, title, LRButton }) => {
+
     return (
         <div className={classes.root}>
             <AppBar position='static'>
