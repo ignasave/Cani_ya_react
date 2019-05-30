@@ -32,7 +32,6 @@ function generate(elements) {
                         </IconButton>
                     </ListItemSecondaryAction>
                 </ListItem>
-                {index + 1 !== elements.length ? <Divider /> : null}
             </Fragment>
         );
     });

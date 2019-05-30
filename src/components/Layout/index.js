@@ -4,14 +4,11 @@ import SideList from '../SideList';
 import TopAppBar from '../TopAppBar';
 
 class Layout extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isOpen: false,
-            title: 'Menu',
-            LoginRegister: 'login',
-        };
-    }
+    state = {
+        isOpen: false,
+        title: 'Menu',
+        LoginRegister: 'login',
+    };
 
     toggleDrawer = state => () => {
         this.setState({ isOpen: state });

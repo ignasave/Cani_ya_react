@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ListOfProducts from '../ListOfProducts';
 import AddIcon from '@material-ui/icons/Add';
-import FloatingActionButtons from '../FloatingButton';
+import FloatingActionButtons from '../../FloatingButton';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import SaveAlt from '@material-ui/icons/SaveAlt';

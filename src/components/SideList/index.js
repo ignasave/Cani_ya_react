@@ -9,7 +9,7 @@ import { RoutesConfig } from '../RouteSetup';
 import { withStyles } from '@material-ui/core';
 import { styles } from './styles';
 
-const MakeList = (classes) => {
+const MakeList = classes => {
     return RoutesConfig.map((item, index) => (
         <Link to={item.route} key={index} className={classes.link}>
             <ListItem button>
@@ -29,4 +29,4 @@ function SideList({ classes }) {
     );
 }
 
-export default withStyles(styles)(SideList)
+export default withStyles(styles)(SideList);

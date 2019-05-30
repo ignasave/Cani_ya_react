@@ -36,12 +36,9 @@ const boxes = [
 ];
 
 export default class index extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            thereIsBoxes: true,
-        };
-    }
+    state = {
+        thereIsBoxes: true,
+    };
 
     checkBoxes() {
         return this.state.thereIsBoxes ? (

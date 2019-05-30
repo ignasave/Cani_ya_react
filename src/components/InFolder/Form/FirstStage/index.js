@@ -10,16 +10,12 @@ import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import { styles } from './styles';
 
-
 class FirstStage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedDate: new Date(),
-            provider: '',
-            showError: false,
-        };
-    }
+    state = {
+        selectedDate: new Date(),
+        provider: '',
+        showError: false,
+    };
 
     handleDateChange = date => {
         this.setState({ selectedDate: date });
@@ -55,7 +51,6 @@ class FirstStage extends Component {
                     direction='column'
                     justify='center'
                     alignItems='center'>
-                        
                     {showError ? (
                         <Grid item xs={12} className={classes.datePicker}>
                             <Paper elevation={1} className={classes.paper}>
@@ -110,5 +105,5 @@ class FirstStage extends Component {
 
 FirstStage.propTypes = {
     classes: PropTypes.object.isRequired,
-}
+};
 export default withStyles(styles)(FirstStage);

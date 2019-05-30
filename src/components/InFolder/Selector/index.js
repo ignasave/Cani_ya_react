@@ -10,12 +10,9 @@ import PropTypes from 'prop-types';
 import { styles } from './styles';
 
 class Selector extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            labelWidth: 0,
-        };
-    }
+    state = {
+        labelWidth: 0,
+    };
 
     componentDidMount() {
         this.setState({
@@ -24,7 +21,7 @@ class Selector extends Component {
     }
 
     handleChange = event => {
-        this.props.onChange(event.target.value)
+        this.props.onChange(event.target.value);
     };
 
     render() {
