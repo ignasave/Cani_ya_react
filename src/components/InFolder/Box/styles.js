@@ -8,4 +8,8 @@ export const styles = theme => ({
     typography: {
         marginBottom: 0,
     },
+    open: {
+        color: '#f50057',
+        marginBottom: 0,
+    }
 });

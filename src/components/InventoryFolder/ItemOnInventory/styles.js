@@ -19,7 +19,6 @@ export const styles = theme => ({
       maxHeight: '100%',
     },
     container: {
-      paddingTop: 0,
-      marginLeft: theme.spacing(1)
+      margin: theme.spacing(1)
     }
   });

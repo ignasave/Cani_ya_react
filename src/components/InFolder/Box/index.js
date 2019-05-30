@@ -55,7 +55,11 @@ class Box extends React.Component {
                         primary={
                             <Typography
                                 variant='h6'
-                                className={classes.typography}
+                                className={                         
+                                    this.state.open
+                                        ? this.props.classes.open
+                                        : null
+                                }
                                 gutterBottom>
                                 {title}
                             </Typography>
