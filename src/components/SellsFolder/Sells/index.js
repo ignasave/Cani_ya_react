@@ -1,15 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import NavTabs from '../NavTab'
+import React from 'react';
+import PropTypes from 'prop-types';
+import NavTabs from '../NavTab';
 function Sells(props) {
-    return (
- <NavTabs></NavTabs>
-    )
+    return <NavTabs />;
 }
 
-Sells.propTypes = {
+Sells.propTypes = {};
 
-}
-
-export default Sells
-
+export default Sells;

@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import NoSsr from '@material-ui/core/NoSsr';
 import LinkTab from '../LinkTab'
-
+import ListOfNewsPaper from '../ListOfNewsPaper'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,7 +30,7 @@ function NavTabs() {
             <LinkTab label="Revistas" href="page2" />
           </Tabs>
         </AppBar>
-        {value === 0 && <p>hola</p>}
+        {value === 0 && <ListOfNewsPaper></ListOfNewsPaper>}
         {value === 1 && <p>hola2</p>}
       </div>
     </NoSsr>
