@@ -6,6 +6,8 @@ import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Inventory from '../InventoryFolder/Inventory'
 import Sells from '../SellsFolder/Sells'
+import MagazineSeachList from '../SellsFolder/MagazineSearchList'
+
 class App extends Component {
     render() {
         return (
@@ -13,9 +15,11 @@ class App extends Component {
                 <Router>
                     <Layout />
 
-                    <Route path='/ingreso' component={In} />
-                    <Route path='/inventario' component={Inventory} />
-                    <Route path='/ventas' component={Sells} />
+                    <Route exact path='/ingreso' component={In} />
+                    <Route exact path='/inventario' component={Inventory} />
+                    <Route exact path='/ventas' component={Sells} />
+                    <Route exact path='/search' component={MagazineSeachList}/>
+                    
                 </Router>
             </MuiPickersUtilsProvider>
         );

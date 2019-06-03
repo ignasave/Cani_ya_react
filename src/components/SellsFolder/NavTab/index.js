@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import NoSsr from '@material-ui/core/NoSsr';
 import LinkTab from '../LinkTab'
 import NewsPaperTab from '../NewsPaperTab'
+import Magazines from '../Magazines'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 function NavTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-
+  
   function handleChange(event, newValue) {
     setValue(newValue);
   }
@@ -31,7 +32,7 @@ function NavTabs() {
           </Tabs>
         </AppBar>
         {value === 0 && <NewsPaperTab/>}
-        {value === 1 && <p>hola2</p>}
+        {value === 1 && <Magazines/>}
       </div>
     </NoSsr>
   );

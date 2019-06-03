@@ -40,8 +40,8 @@ function NewsPaperItem({ classes, name }) {
                             id='standard-number'
                             type='number'
                             value={count}
-                            onChange={event =>
-                                handleSetCount(event.target.value)
+                            onChange={e =>
+                                handleSetCount(e.target.value)
                             }
                             className={classes.numberField}
                             InputLabelProps={{
