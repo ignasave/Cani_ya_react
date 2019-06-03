@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ListOfItems from '../ListOfItems';
 import NavigationOnInventory from '../NavigationOnInventory';
-import CategorySubtitle from '../CategorySubtitle'
+import CategorySubtitle from '../CategorySubtitle';
 const items = [
     {
         name: '!HOLA',
@@ -28,7 +28,7 @@ const Inventory = props => {
     return (
         <div>
             <NavigationOnInventory />
-            <CategorySubtitle category=' category '/>
+            <CategorySubtitle category=' category ' />
             <ListOfItems items={items} />
         </div>
     );

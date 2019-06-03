@@ -27,7 +27,6 @@ const items = [
     },
 ];
 
-
 class BoxOpened extends Component {
     state = {
         icon: <AddIcon />,
@@ -58,7 +57,7 @@ class BoxOpened extends Component {
                     {date}
                 </Typography>
 
-                <ListOfProducts items={items}/>
+                <ListOfProducts items={items} />
 
                 <Button
                     variant='contained'

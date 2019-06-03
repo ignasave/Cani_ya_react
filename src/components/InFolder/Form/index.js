@@ -26,10 +26,10 @@ class Form extends Component {
     };
 
     render() {
-        const { stage, date, provider, initial } = this.state
+        const { stage, date, provider, initial } = this.state;
         return (
             <div>
-                { stage === 'first' ? (
+                {stage === 'first' ? (
                     <FirstStage changeStage={this.handleStageChange} />
                 ) : stage === 'menu' ? (
                     <BoxOpened

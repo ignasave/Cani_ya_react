@@ -15,7 +15,7 @@ const makeBoxes = items => {
                     title={element.formatedDate}
                     childrens={element.childrens}
                 />
-                { index + 1 !== items.length ? <Divider /> : null }
+                {index + 1 !== items.length ? <Divider /> : null}
             </Fragment>
         );
     });

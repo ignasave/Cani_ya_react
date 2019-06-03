@@ -1,5 +1,5 @@
 import React from 'react';
-import Tab from '@material-ui/core/Tab'
+import Tab from '@material-ui/core/Tab';
 
 function LinkTab(props) {
     return (

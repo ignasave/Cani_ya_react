@@ -11,7 +11,11 @@ import ListOfNewsPaper from '../ListOfNewsPaper';
 
 function Magazines({ classes }) {
     const [date, setDate] = React.useState(new Date());
-
+    const items = [
+        { name: 'Gente', secondary: 'Ed: 315' },
+        { name: 'Hola', secondary: 'Ed: 547' },
+        { name: 'Caras', secondary: ' Ed: 123' },
+    ];
     return (
         <Fragment>
             <Grid
@@ -38,7 +42,7 @@ function Magazines({ classes }) {
                     />
                 </Grid>
             </Grid>
-            <ListOfNewsPaper />
+            <ListOfNewsPaper items={items} />
         </Fragment>
     );
 }

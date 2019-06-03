@@ -25,7 +25,7 @@ function NavigationOnInventory({ classes }) {
                         <Category />
                     </IconButton>
                 </Grid>
-                <Grid item xs={2}></Grid>
+                <Grid item xs={2} />
                 <Grid item xs={8}>
                     <FormControl className={classes.margin}>
                         <InputLabel htmlFor='search product'>

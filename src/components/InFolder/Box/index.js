@@ -55,7 +55,7 @@ class Box extends React.Component {
                         primary={
                             <Typography
                                 variant='h6'
-                                className={                         
+                                className={
                                     this.state.open
                                         ? this.props.classes.open
                                         : null

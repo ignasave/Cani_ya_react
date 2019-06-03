@@ -9,18 +9,51 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import Search from '@material-ui/icons/Search';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import FolderIcon from '@material-ui/icons/Folder';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+import { Divider } from '@material-ui/core';
+import Publication from '../Publication';
+import ListSubheader from '@material-ui/core/ListSubheader';
 
 function MagazineSeachList({ classes }) {
     const [search, setSearch] = React.useState('');
-    const items = ['Hola', 'Caras', 'Gente'];
+
+    const items = [
+        {
+            name: 'Hola',
+            editions: [
+                { date: '03/06/19', edition: 13, existences: 3 },
+                { date: '10/06/19', edition: 14, existences: 3 },
+            ],
+        },
+        {
+            name: 'Caras',
+            editions: [
+                { date: '03/06/19', edition: 13, existences: 3 },
+                { date: '10/06/19', edition: 14, existences: 3 },
+            ],
+        },
+        {
+            name: 'Gente',
+            editions: [
+                { date: '03/06/19', edition: 13, existences: 3 },
+                { date: '10/06/19', edition: 14, existences: 3 },
+            ],
+        },
+    ];
 
     let filteredMagazines = items.filter(magazine => {
-        return magazine.toLowerCase().indexOf(search) !== -1;
+        return magazine.name.toLowerCase().indexOf(search) !== -1;
     });
+
+    const makeMagazines = () => {
+        return filteredMagazines.map((magazine, index) => {
+            return (
+                <Fragment key={index}>
+                    <Publication magazine={magazine} />
+                    {index + 1 !== items.length ? <Divider /> : null}
+                </Fragment>
+            );
+        });
+    };
 
     return (
         <Fragment>
@@ -49,20 +82,14 @@ function MagazineSeachList({ classes }) {
                     </FormControl>
                 </div>
                 <div className={classes.list}>
-                    <List>
-                        {filteredMagazines.map((magazine, index) => {
-                            return (
-                                <ListItem key={index}>
-                                    <ListItemIcon>
-                                        <FolderIcon />
-                                    </ListItemIcon>
-                                    <ListItemText
-                                        primary={magazine}
-                                        secondary={'Secondary text'}
-                                    />
-                                </ListItem>
-                            );
-                        })}
+                    <List
+                        component='nav'
+                        subheader={
+                            <ListSubheader component='div' align='center'>
+                                Inventario de publicaciones
+                            </ListSubheader>
+                        }>
+                        {makeMagazines()}
                     </List>
                 </div>
             </Grid>

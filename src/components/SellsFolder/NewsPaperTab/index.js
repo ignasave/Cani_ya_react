@@ -5,6 +5,8 @@ import ListOfNewsPaper from '../ListOfNewsPaper';
 import { DatePicker } from '@material-ui/pickers';
 import { styles } from './styles';
 
+const items = [{ name: 'CLARIN' }, { name: 'NACION' }, { name: 'CAPITAL' }];
+
 function NewsPaperTab({ classes }) {
     const [date, setDate] = React.useState(new Date());
 
@@ -19,13 +21,13 @@ function NewsPaperTab({ classes }) {
                     variant='dialog'
                 />
             </div>
-            <ListOfNewsPaper />
+            <ListOfNewsPaper items={items} />
         </Fragment>
     );
 }
 
 NewsPaperTab.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(NewsPaperTab);

@@ -13,7 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import { styles } from './styles';
 import { withStyles } from '@material-ui/core/styles';
 
-function NewsPaperItem({ classes, name }) {
+function NewsPaperItem({ classes, name, secText }) {
     const [count, setCount] = useState(0);
 
     const handleSetCount = value => {
@@ -29,7 +29,10 @@ function NewsPaperItem({ classes, name }) {
         <Grid item xs={12} md={6} className={classes.container}>
             <List>
                 <ListItem>
-                    <ListItemText primary={name} />
+                    <ListItemText
+                        primary={name}
+                        secondary={secText ? secText : null}
+                    />
                     <ListItemSecondaryAction>
                         <IconButton
                             aria-label='Remove'
@@ -40,9 +43,7 @@ function NewsPaperItem({ classes, name }) {
                             id='standard-number'
                             type='number'
                             value={count}
-                            onChange={e =>
-                                handleSetCount(e.target.value)
-                            }
+                            onChange={e => handleSetCount(e.target.value)}
                             className={classes.numberField}
                             InputLabelProps={{
                                 shrink: true,

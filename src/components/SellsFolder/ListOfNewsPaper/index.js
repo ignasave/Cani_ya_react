@@ -4,18 +4,18 @@ import NewsPaperItem from '../NewsPaperItem';
 
 const makeNewsPapers = items => {
     return items.map((element, index) => {
-        return <NewsPaperItem name={element} key={index} />;
+        return (
+            <NewsPaperItem
+                name={element.name}
+                secText={element.secondary}
+                key={index}
+            />
+        );
     });
 };
 
-const items = ['CLARIN', 'NACION', 'CAPIAL'];
-
-function ListOfNewsPaper(props) {
-    return (
-        <Grid container>
-            {makeNewsPapers(items)}
-        </Grid>
-    );
+function ListOfNewsPaper({ items }) {
+    return <Grid container>{makeNewsPapers(items)}</Grid>;
 }
 
 ListOfNewsPaper.propTypes = {};

@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './styles';
 
-function CategorySubtitle({category, classes}) {
+function CategorySubtitle({ category, classes }) {
     return (
         <Typography variant='caption' gutterBottom className={classes.subtitle}>
             {category}

@@ -16,6 +16,8 @@ export const styles = theme => ({
         maxWidth: '76%'
     },
     list: {
-        padding: 0
+        padding: 0,
+        margin:0,
+        width:'100%'
     }
   });
