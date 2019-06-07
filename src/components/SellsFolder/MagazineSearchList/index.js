@@ -97,6 +97,8 @@ function MagazineSeachList({ classes }) {
     );
 }
 
-MagazineSeachList.propTypes = {};
+MagazineSeachList.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(MagazineSeachList);

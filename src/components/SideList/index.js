@@ -8,11 +8,18 @@ import React from 'react';
 import { RoutesConfig } from '../RouteSetup';
 import { withStyles } from '@material-ui/core';
 import { styles } from './styles';
+import PropTypes from 'prop-types';
 
 const MakeList = classes => {
-    return RoutesConfig.map((item, index) => (
-        <SideLink item={item} key={index} classes={classes} />
-    ));
+    return RoutesConfig.map((item, index) =>
+        item.inLayout ? (
+            <SideLink item={item} key={index} classes={classes} />
+        ) : null
+    );
+};
+
+MakeList.propTypes = {
+    classes: PropTypes.object.isRequired,
 };
 
 const SideLink = ({ item, classes }) => {
@@ -26,6 +33,11 @@ const SideLink = ({ item, classes }) => {
     );
 };
 
+SideLink.propTypes = {
+    classes: PropTypes.object.isRequired,
+    item: PropTypes.object.isRequired,
+};
+
 function SideList({ classes }) {
     return (
         <div>
@@ -34,5 +46,9 @@ function SideList({ classes }) {
         </div>
     );
 }
+
+SideList.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(SideList);

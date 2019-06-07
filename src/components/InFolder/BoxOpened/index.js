@@ -41,7 +41,7 @@ class BoxOpened extends Component {
     };
 
     render() {
-        const { date, provider, classes } = this.props;
+        const { date, provider, classes, quantity } = this.props;
         const { icon } = this.state;
         return (
             <div className={classes.container}>
@@ -57,7 +57,7 @@ class BoxOpened extends Component {
                     {date}
                 </Typography>
 
-                <ListOfProducts items={items} />
+                <ListOfProducts items={items} quantity={quantity}/>
 
                 <Button
                     variant='contained'

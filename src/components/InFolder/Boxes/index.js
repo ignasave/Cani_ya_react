@@ -21,13 +21,13 @@ const makeBoxes = items => {
     });
 };
 
-const Boxes = ({ classes, boxes }) => {
+const Boxes = ({ classes, boxes, section }) => {
     return (
         <List
             component='nav'
             subheader={
                 <ListSubheader component='div' align='center'>
-                    Historial de cajas
+                    Historial de {section}
                 </ListSubheader>
             }
             className={classes.root}>

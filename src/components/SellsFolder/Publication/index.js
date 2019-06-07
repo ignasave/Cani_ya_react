@@ -62,6 +62,9 @@ function Publication({ classes, magazine }) {
     );
 }
 
-Publication.propTypes = {};
+Publication.propTypes = {
+    classes: PropTypes.object.isRequired,
+    magazine: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(Publication);

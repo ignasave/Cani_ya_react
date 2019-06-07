@@ -8,6 +8,7 @@ class In extends Component {
     state = {
         icon: <AddIcon />,
         showForm: false,
+        tooltip: 'Abre una nueva caja',
     };
 
     handleShowForm = state => {
@@ -15,11 +16,11 @@ class In extends Component {
     };
 
     render() {
-        const { icon, showForm } = this.state;
+        const { showForm, icon, tooltip } = this.state;
         return (
             <div>
                 {showForm ? (
-                    <Form handleMostrarForm={this.handleShowForm} />
+                    <Form handleMostrarForm={this.handleShowForm} section='cajas'/>
                 ) : (
                     <div>
                         <BoxesOnInventory />
@@ -27,7 +28,7 @@ class In extends Component {
                             color='secondary'
                             aria='add'
                             icon={icon}
-                            tooltip={'Abre una nueva caja'}
+                            tooltip={tooltip}
                             clickHandler={() => {
                                 this.handleShowForm(true);
                             }}

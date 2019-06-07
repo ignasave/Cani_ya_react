@@ -1,54 +1,93 @@
 import React from 'react';
-import { 
-    Inbox, 
+
+import {
+    Inbox,
     Archive,
-    AttachMoney, 
+    AttachMoney,
     Undo,
-    Timeline, 
+    Timeline,
     AssignmentInd,
-    AssignmentReturned, 
-    BarChart
-   } from '@material-ui/icons';
+    AssignmentReturned,
+    BarChart,
+} from '@material-ui/icons';
+
+import In from '../InFolder/In';
+import Inventory from '../InventoryFolder/Inventory';
+import Sells from '../SellsFolder/Sells';
+import MagazineSeachList from '../SellsFolder/MagazineSearchList';
+import Returns from '../ReturnsFolder/Returns';
+
+import { Route } from 'react-router-dom';
+
+export const ReturnRoutes = () => {
+    return RoutesConfig.map((element, index) => {
+        return (
+            <Route
+                exact
+                path={element.route}
+                component={element.component}
+                key={index}
+            />
+        );
+    });
+};
 
 export const RoutesConfig = [
     {
-        route: 'inventario',
+        route: '/inventario',
         name: 'Inventario',
-        icon: <Inbox/>,
+        icon: <Inbox />,
+        inLayout: true,
+        component: Inventory,
     },
     {
-        route: 'ingreso',
+        route: '/ingreso',
         name: 'Ingreso',
-        icon: <Archive/>,
+        inLayout: true,
+        icon: <Archive />,
+        component: In,
     },
     {
-        route: 'ventas',
+        route: '/ventas',
         name: 'Ventas',
-        icon: <AttachMoney/>,
+        inLayout: true,
+        icon: <AttachMoney />,
+        component: Sells,
     },
     {
-        route: 'devoluciones',
+        route: '/devoluciones',
         name: 'Devoluciones',
-        icon: <Undo/>,
+        inLayout: true,
+        icon: <Undo />,
+        component: Returns,
     },
     {
-        route: 'reparto',
+        route: '/search',
+        inLayout: false,
+        component: MagazineSeachList,
+    },
+    {
+        route: '/reparto',
         name: 'Reparto',
-        icon: <Timeline/>,
+        inLayout: true,
+        icon: <Timeline />,
     },
     {
-        route: 'clientes',
+        route: '/clientes',
         name: 'Clientes',
-        icon: <AssignmentInd/>,
+        inLayout: true,
+        icon: <AssignmentInd />,
     },
     {
-        route: 'proveedores',
+        route: '/proveedores',
         name: 'Proveedores',
-        icon: <AssignmentReturned/>,
+        inLayout: true,
+        icon: <AssignmentReturned />,
     },
     {
-        route: 'reportes',
+        route: '/reportes',
         name: 'Reportes',
-        icon: <BarChart/>,
+        inLayout: true,
+        icon: <BarChart />,
     },
-]
+];

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FirstStage from './FirstStage/';
 import SecondStage from './SecondStage/';
 import BoxOpened from '../BoxOpened';
-
+import MagazineSearchList from '../../SellsFolder/MagazineSearchList';
 class Form extends Component {
     state = {
         stage: 'first',
@@ -21,12 +21,8 @@ class Form extends Component {
         this.props.handleMostrarForm(state);
     };
 
-    handleChangeInitial = data => {
-        this.setState({ initial: data });
-    };
-
     render() {
-        const { stage, date, provider, initial } = this.state;
+        const { stage, date, provider } = this.state;
         return (
             <div>
                 {stage === 'first' ? (
@@ -37,12 +33,14 @@ class Form extends Component {
                         provider={provider}
                         changeStage={this.handleStageChange}
                         handleShowForm={this.handleShowForm.bind(this)}
+                        quantity={ this.props.from === 'returns'}
                     />
                 ) : stage === 'second' ? (
-                    <SecondStage
-                        changeStage={this.handleStageChange}
-                        initial={initial}
-                    />
+                    this.props.from !== 'returns' ? (
+                        <SecondStage changeStage={this.handleStageChange} />
+                    ) : (
+                        <MagazineSearchList />
+                    )
                 ) : (
                     <FirstStage changeStage={this.handleStageChange} />
                 )}

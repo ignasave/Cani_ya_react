@@ -42,7 +42,7 @@ export default class index extends Component {
 
     checkBoxes() {
         return this.state.thereIsBoxes ? (
-            <Boxes boxes={boxes} />
+            <Boxes boxes={boxes} section={this.props.section} />
         ) : (
             <Typography component='h2' variant='overline' gutterBottom>
                 ¡Vaya parece que aun no hay cajas!

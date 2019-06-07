@@ -6,4 +6,10 @@ export const styles = theme => ({
     demo: {
         backgroundColor: theme.palette.background.paper,
     },
+    numberField: {
+        width: 30
+    },
+    container: {
+        padding: 0,
+    }
 });

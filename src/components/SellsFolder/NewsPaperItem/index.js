@@ -66,6 +66,7 @@ function NewsPaperItem({ classes, name, secText }) {
 NewsPaperItem.propTypes = {
     classes: PropTypes.object.isRequired,
     name: PropTypes.string.isRequired,
+    secText: PropTypes.string,
 };
 
 export default withStyles(styles)(NewsPaperItem);

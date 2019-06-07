@@ -8,6 +8,7 @@ import Search from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import { Link } from 'react-router-dom';
 import ListOfNewsPaper from '../ListOfNewsPaper';
+import { DatePickerSetup } from '../../../Utils/ConfigSetup'
 
 function Magazines({ classes }) {
     const [date, setDate] = React.useState(new Date());
@@ -37,7 +38,7 @@ function Magazines({ classes }) {
                         label='Fecha: '
                         value={date}
                         onChange={newDate => setDate(newDate)}
-                        views={['day', 'month', 'year']}
+                        views={DatePickerSetup}
                         variant='dialog'
                     />
                 </Grid>

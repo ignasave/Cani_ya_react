@@ -5,16 +5,19 @@ import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
 import { DatePicker } from '@material-ui/pickers';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import { styles } from './styles';
+import ErrorMessage from '../../../ErrorMessage';
+import { DatePickerSetup } from '../../../../Utils/ConfigSetup';
+
+/* CONSTANTE DE MUESTRA */ const items = ['', 'Clarin', 'Palena', 'Nacion'];
 
 class FirstStage extends Component {
     state = {
         selectedDate: new Date(),
         provider: '',
         showError: false,
+        name: 'Proveedor',
     };
 
     handleDateChange = date => {
@@ -42,7 +45,8 @@ class FirstStage extends Component {
 
     render() {
         const { classes } = this.props;
-        const { showError, selectedDate, provider } = this.state;
+        const { showError, selectedDate, provider, name } = this.state;
+
         return (
             <div>
                 <Grid
@@ -53,18 +57,7 @@ class FirstStage extends Component {
                     alignItems='center'>
                     {showError ? (
                         <Grid item xs={12} className={classes.datePicker}>
-                            <Paper elevation={1} className={classes.paper}>
-                                <Typography
-                                    variant='h6'
-                                    className={classes.error}
-                                    component='h3'>
-                                    ¡Hubo un error!
-                                </Typography>
-                                <Typography component='p'>
-                                    Intente ingresar los datos nuevamente o
-                                    reinicie la aplicacion.
-                                </Typography>
-                            </Paper>
+                            <ErrorMessage />
                         </Grid>
                     ) : null}
 
@@ -73,7 +66,7 @@ class FirstStage extends Component {
                             label='Fecha: '
                             value={selectedDate}
                             onChange={this.handleDateChange}
-                            views={['day', 'month', 'year']}
+                            views={DatePickerSetup.views}
                             variant='dialog'
                         />
                     </Grid>
@@ -82,8 +75,8 @@ class FirstStage extends Component {
                         <Selector
                             onChange={this.handleProviderChange}
                             value={provider}
-                            name='Proveedor'
-                            items={['', 'Clarin', 'Palena', 'Nacion']}
+                            name={name}
+                            items={items}
                         />
                     </Grid>
 

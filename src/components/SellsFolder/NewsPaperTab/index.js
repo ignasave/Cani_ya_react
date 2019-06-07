@@ -4,8 +4,13 @@ import PropTypes from 'prop-types';
 import ListOfNewsPaper from '../ListOfNewsPaper';
 import { DatePicker } from '@material-ui/pickers';
 import { styles } from './styles';
+import { DatePickerSetup } from '../../../Utils/ConfigSetup';
 
-const items = [{ name: 'CLARIN' }, { name: 'NACION' }, { name: 'CAPITAL' }];
+const items = [
+    { name: 'Clarin', secondary: 'Fecha: 04/06/2019' },
+    { name: 'Nacion', secondary: 'Fecha: 04/06/2019' },
+    { name: 'Capital', secondary: 'Fecha: 04/06/2019' },
+];
 
 function NewsPaperTab({ classes }) {
     const [date, setDate] = React.useState(new Date());
@@ -17,7 +22,7 @@ function NewsPaperTab({ classes }) {
                     label='Fecha: '
                     value={date}
                     onChange={newDate => setDate(newDate)}
-                    views={['day', 'month', 'year']}
+                    views={DatePickerSetup}
                     variant='dialog'
                 />
             </div>
