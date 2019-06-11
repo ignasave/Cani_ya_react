@@ -1,12 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, Fragment } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import NoSsr from '@material-ui/core/NoSsr';
 import LinkTab from '../LinkTab';
-import NewsPaperTab from '../NewsPaperTab';
-import Magazines from '../Magazines';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -14,12 +11,33 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function NavTabs() {
+function NavTabs({ tabsData }) {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState(0);
 
     function handleChange(event, newValue) {
         setValue(newValue);
+    }
+
+    function makeLinkTab() {
+        return tabsData.map((element, index) => {
+            return (
+                <LinkTab
+                    label={element.label}
+                    href={element.href}
+                    key={index}
+                />
+            );
+        });
+    }
+
+    function renderCorrectTab() {
+        return tabsData.map((element, index) => {
+            if (value === index) {
+                return <Fragment key={index}>{element.component}</Fragment>;
+            }
+            return null;
+        });
     }
 
     return (
@@ -30,12 +48,10 @@ function NavTabs() {
                         variant='fullWidth'
                         value={value}
                         onChange={handleChange}>
-                        <LinkTab label='Diarios' href='page1' />
-                        <LinkTab label='Revistas' href='page2' />
+                        {makeLinkTab()}
                     </Tabs>
                 </AppBar>
-                {value === 0 && <NewsPaperTab />}
-                {value === 1 && <Magazines />}
+                {renderCorrectTab()}
             </div>
         </NoSsr>
     );

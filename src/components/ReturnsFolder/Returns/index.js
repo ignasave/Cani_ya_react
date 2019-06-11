@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import FloatingActionButtons from '../../FloatingButton';
 import AddIcon from '@material-ui/icons/Add';
 import Form from '../../InFolder/Form'
 import BoxesOnInventory from '../../InFolder/BoxesOnInventory'
 
 function Returns(props) {
-    const [showForm, useShowForm] = React.useState(false);
-
+    const [showForm, useShowForm] = useState(false);
+    const icon = <AddIcon/>
     const handeUseShowForm = (state) => {
         useShowForm(state);
     }
@@ -22,7 +21,7 @@ function Returns(props) {
                     <FloatingActionButtons
                         color='secondary'
                         aria='add'
-                        icon={<AddIcon />}
+                        icon={icon}
                         tooltip={'Abre una nueva caja para devolucion'}
                         clickHandler={() => {
                             handeUseShowForm(true)
@@ -33,7 +32,5 @@ function Returns(props) {
         </div>
     );
 }
-
-Returns.propTypes = {};
 
 export default Returns;

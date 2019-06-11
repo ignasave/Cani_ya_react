@@ -5,7 +5,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { RoutesConfig } from '../RouteSetup';
+import { RoutesConfig } from '../../RouteSetup';
 import { withStyles } from '@material-ui/core';
 import { styles } from './styles';
 import PropTypes from 'prop-types';

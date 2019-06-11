@@ -1,8 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import NavTabs from '../NavTab';
+import NewsPaperTab from '../NewsPaperTab';
+import Magazines from '../Magazines';
+
+const tabItems = [
+    {
+        label: 'Diarios',
+        href: 'page1',
+        component: <NewsPaperTab />,
+    },
+    {
+        label: 'Revistas',
+        href: 'page2',
+        component: <Magazines />,
+    },
+];
+
 function Sells(props) {
-    return <NavTabs />;
+    return <NavTabs tabsData={tabItems} />;
 }
 
 Sells.propTypes = {};

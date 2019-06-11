@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import ItemOnInventory from '../ItemOnInventory';
 
@@ -17,6 +16,7 @@ const makeItems = items => {
         );
     });
 };
+
 const items = [
     {
         name: '!HOLA',
@@ -37,6 +37,7 @@ const items = [
         image: 'https://picsum.photos/80',
     },
 ];
+
 const ListOfItems = props => {
     return (
         <Grid

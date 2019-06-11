@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { styles } from './styles';
+import { withStyles } from '@material-ui/styles';
 
 function ErrorMessage({ classes }) {
     return (
@@ -17,6 +18,8 @@ function ErrorMessage({ classes }) {
     );
 }
 
-ErrorMessage.propTypes = {};
+ErrorMessage.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
-export default ErrorMessage;
+export default withStyles(styles)(ErrorMessage);

@@ -9,15 +9,21 @@ import {
     AssignmentInd,
     AssignmentReturned,
     BarChart,
+    Notes,
 } from '@material-ui/icons';
 
-import In from '../InFolder/In';
-import Inventory from '../InventoryFolder/Inventory';
-import Sells from '../SellsFolder/Sells';
-import MagazineSeachList from '../SellsFolder/MagazineSearchList';
-import Returns from '../ReturnsFolder/Returns';
+import In from '../components/InFolder/In';
+import Inventory from '../components/InventoryFolder/Inventory';
+import Sells from '../components/SellsFolder/Sells';
+import MagazineSeachList from '../components/SellsFolder/MagazineSearchList';
+import Returns from '../components/ReturnsFolder/Returns';
+import Distribution from '../components/DistributionFolder/Distribution';
+import Clients from '../components/ClientsFolder/Clients'
 
 import { Route } from 'react-router-dom';
+import Providers from '../components/ProvidersFolder/Providers';
+import Reports from '../components/ReportsFolder/Reports';
+import NotesComponent from '../components/NotesFolder/Notes'
 
 export const ReturnRoutes = () => {
     return RoutesConfig.map((element, index) => {
@@ -71,23 +77,34 @@ export const RoutesConfig = [
         name: 'Reparto',
         inLayout: true,
         icon: <Timeline />,
+        component: Distribution,
     },
     {
         route: '/clientes',
         name: 'Clientes',
         inLayout: true,
         icon: <AssignmentInd />,
+        component: Clients
     },
     {
         route: '/proveedores',
         name: 'Proveedores',
         inLayout: true,
         icon: <AssignmentReturned />,
+        component: Providers,
     },
     {
         route: '/reportes',
         name: 'Reportes',
         inLayout: true,
         icon: <BarChart />,
+        component: Reports,
     },
+    {
+        route: '/notas',
+        name: 'Notas',
+        inLayout: true,
+        icon: <Notes/>,
+        component: NotesComponent,
+    }
 ];

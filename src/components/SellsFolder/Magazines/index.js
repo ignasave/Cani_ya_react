@@ -3,12 +3,11 @@ import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { DatePicker } from '@material-ui/pickers';
 import { styles } from './styles';
-import Grid from '@material-ui/core/Grid';
 import Search from '@material-ui/icons/Search';
-import IconButton from '@material-ui/core/IconButton';
 import { Link } from 'react-router-dom';
 import ListOfNewsPaper from '../ListOfNewsPaper';
-import { DatePickerSetup } from '../../../Utils/ConfigSetup'
+import { DatePickerSetup } from '../../../Utils/ConfigSetup';
+import FloatingActionButton from '../../FloatingButton';
 
 function Magazines({ classes }) {
     const [date, setDate] = React.useState(new Date());
@@ -19,31 +18,25 @@ function Magazines({ classes }) {
     ];
     return (
         <Fragment>
-            <Grid
-                container
-                direction='row'
-                justify='center'
-                alignItems='center'
-                spacing={3}
-                className={classes.grid}>
-                <Grid item xs={2} className={classes.reduce}>
-                    <Link to='/search'>
-                        <IconButton color='secondary' aria-label='Search'>
-                            <Search />
-                        </IconButton>
-                    </Link>
-                </Grid>
-                <Grid item xs={5}>
-                    <DatePicker
-                        label='Fecha: '
-                        value={date}
-                        onChange={newDate => setDate(newDate)}
-                        views={DatePickerSetup}
-                        variant='dialog'
-                    />
-                </Grid>
-            </Grid>
+            <div className={classes.datePicker}>
+                <DatePicker
+                    label='Fecha: '
+                    value={date}
+                    onChange={newDate => setDate(newDate)}
+                    views={DatePickerSetup}
+                    variant='dialog'
+                />
+            </div>
             <ListOfNewsPaper items={items} />
+            <Link to='/search'>
+                <FloatingActionButton
+                    color='secondary'
+                    icon={<Search />}
+                    aria='search'
+                    tooltip='Buscar y agregar un nuevo producto'
+                    clickHandler={() => {}}
+                />
+            </Link>
         </Fragment>
     );
 }

@@ -20,10 +20,10 @@ class In extends Component {
         return (
             <div>
                 {showForm ? (
-                    <Form handleMostrarForm={this.handleShowForm} section='cajas'/>
+                    <Form handleMostrarForm={this.handleShowForm} />
                 ) : (
                     <div>
-                        <BoxesOnInventory />
+                        <BoxesOnInventory section='cajas' />
                         <FloatingActionButtons
                             color='secondary'
                             aria='add'
