@@ -41,8 +41,11 @@ export default class index extends Component {
     };
 
     checkBoxes() {
-        return this.state.thereIsBoxes ? (
-            <Boxes boxes={boxes} section={this.props.section} />
+        const { thereIsBoxes } = this.state;
+        const { section } = this.props
+
+        return thereIsBoxes ? (
+            <Boxes boxes={boxes} section={section} />
         ) : (
             <Typography component='h2' variant='overline' gutterBottom>
                 ¡Vaya parece que aun no hay cajas!

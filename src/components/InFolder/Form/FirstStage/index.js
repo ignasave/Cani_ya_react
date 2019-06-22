@@ -7,7 +7,7 @@ import { DatePicker } from '@material-ui/pickers';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { styles } from './styles';
-import ErrorMessage from '../../../ErrorMessage';
+import CustomizedSnackbars from '../../../ErrorMessage/NewError';
 import { DatePickerSetup } from '../../../../Utils/ConfigSetup';
 
 /* CONSTANTE DE MUESTRA */ const items = ['', 'Clarin', 'Palena', 'Nacion'];
@@ -57,7 +57,7 @@ class FirstStage extends Component {
                     alignItems='center'>
                     {showError ? (
                         <Grid item xs={12} className={classes.datePicker}>
-                            <ErrorMessage />
+                            <CustomizedSnackbars />
                         </Grid>
                     ) : null}
 

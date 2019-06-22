@@ -11,6 +11,12 @@ import FloatingActionButton from '../../FloatingButton';
 
 function Magazines({ classes }) {
     const [date, setDate] = React.useState(new Date());
+
+    const color = 'secondary';
+    const icon = <Search />;
+    const aria = 'search';
+    const tooltip = 'Buscar y agregar un nuevo producto';
+
     const items = [
         { name: 'Gente', secondary: 'Ed: 315' },
         { name: 'Hola', secondary: 'Ed: 547' },
@@ -30,10 +36,10 @@ function Magazines({ classes }) {
             <ListOfNewsPaper items={items} />
             <Link to='/search'>
                 <FloatingActionButton
-                    color='secondary'
-                    icon={<Search />}
-                    aria='search'
-                    tooltip='Buscar y agregar un nuevo producto'
+                    color={color}
+                    icon={icon}
+                    aria={aria}
+                    tooltip={tooltip}
                     clickHandler={() => {}}
                 />
             </Link>

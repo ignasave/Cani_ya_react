@@ -5,10 +5,14 @@ export const styles = theme => ({
         textAlign: 'center',
         padding: theme.spacing(3)
     },
-    hour: {
-        height: theme.spacing(3),
+    margin: {
+        margin: theme.spacing(3),
     },
-    selector: {
-        marginBottom: theme.spacing(3)
+    grid: {
+        padding: 0,
+        margin: 0
+    },
+    reduce: {
+        maxWidth: '76%'
     }
   });

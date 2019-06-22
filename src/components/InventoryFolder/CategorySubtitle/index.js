@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import { styles } from './styles';
+import ListSubheader from '@material-ui/core/ListSubheader';
 
 function CategorySubtitle({ category, classes }) {
     return (
-        <Typography variant='caption' gutterBottom className={classes.subtitle}>
+        <ListSubheader component='div' align='center'>
             {category}
-        </Typography>
+        </ListSubheader>
     );
 }
 

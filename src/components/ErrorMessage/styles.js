@@ -4,6 +4,6 @@ export const styles = theme => ({
     },
     paper: {
         textAlign: 'center',
-        padding : theme.spacing(2)
+        padding : 10,
     },
 })

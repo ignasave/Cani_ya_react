@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import FirstStage from './FirstStage/';
-import SecondStage from './SecondStage/';
 import BoxOpened from '../BoxOpened';
 import MagazineSearchList from '../../SellsFolder/MagazineSearchList';
+
 class Form extends Component {
     state = {
         stage: 'first',
@@ -23,6 +23,7 @@ class Form extends Component {
 
     render() {
         const { stage, date, provider } = this.state;
+        const { from } = this.props
         return (
             <div>
                 {stage === 'first' ? (
@@ -33,14 +34,10 @@ class Form extends Component {
                         provider={provider}
                         changeStage={this.handleStageChange}
                         handleShowForm={this.handleShowForm.bind(this)}
-                        quantity={ this.props.from === 'returns'}
+                        quantity={ from === 'returns'}
                     />
                 ) : stage === 'second' ? (
-                    this.props.from !== 'returns' ? (
-                        <SecondStage changeStage={this.handleStageChange} />
-                    ) : (
-                        <MagazineSearchList />
-                    )
+                    <MagazineSearchList simpleList={!(from === 'returns')} />
                 ) : (
                     <FirstStage changeStage={this.handleStageChange} />
                 )}

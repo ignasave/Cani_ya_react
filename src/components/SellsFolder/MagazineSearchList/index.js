@@ -12,8 +12,11 @@ import List from '@material-ui/core/List';
 import { Divider } from '@material-ui/core';
 import Publication from '../Publication';
 import ListSubheader from '@material-ui/core/ListSubheader';
+import PublicationSingleLine from '../PublicationSingleLine';
+import FloatingButton from '../../FloatingButton/index';
+import Add from '@material-ui/icons/Add';
 
-function MagazineSeachList({ classes }) {
+function MagazineSeachList({ classes, simpleList = false }) {
     const [search, setSearch] = React.useState('');
 
     const items = [
@@ -48,7 +51,11 @@ function MagazineSeachList({ classes }) {
         return filteredMagazines.map((magazine, index) => {
             return (
                 <Fragment key={index}>
-                    <Publication magazine={magazine} />
+                    {simpleList ? (
+                        <PublicationSingleLine magazine={magazine} />
+                    ) : (
+                        <Publication magazine={magazine} />
+                    )}
                     {index + 1 !== items.length ? <Divider /> : null}
                 </Fragment>
             );
@@ -66,7 +73,7 @@ function MagazineSeachList({ classes }) {
                 className={classes.grid}>
                 <div className={classes.reduce}>
                     <FormControl className={classes.margin}>
-                        <InputLabel htmlFor='search product'>
+                        <InputLabel htmlFor='search_product'>
                             Buscar un producto
                         </InputLabel>
                         <Input
@@ -92,6 +99,15 @@ function MagazineSeachList({ classes }) {
                         {makeMagazines()}
                     </List>
                 </div>
+                {simpleList ? (
+                    <FloatingButton
+                        color='secondary'
+                        icon={<Add />}
+                        tooltip='Añade un nuevo producto'
+                        aria='add a product'
+                        clickHandler={() => {}}
+                    />
+                ) : null}
             </Grid>
         </Fragment>
     );

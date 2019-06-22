@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { styles } from './styles';
 import { withStyles } from '@material-ui/styles';
+import NewError from './NewError'
 
 function ErrorMessage({ classes }) {
     return (
@@ -14,6 +15,7 @@ function ErrorMessage({ classes }) {
             <Typography component='p'>
                 Intente ingresar los datos nuevamente o reinicie la aplicacion.
             </Typography>
+            <NewError></NewError>
         </Paper>
     );
 }

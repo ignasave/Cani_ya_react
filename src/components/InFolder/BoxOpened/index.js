@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import ListOfProducts from '../ListOfProducts';
 import AddIcon from '@material-ui/icons/Add';
-import FloatingActionButtons from '../../FloatingButton';
+import SpeedDialTooltipOpen from '../../FloatingButton/SpeedDial';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import { styles } from './styles';
+
+import Add from '@material-ui/icons/Add';
+import AddPhotoAlternate from '@material-ui/icons/AddPhotoAlternate';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const items = [
     {
@@ -41,8 +45,16 @@ class BoxOpened extends Component {
     };
 
     render() {
+        const actions = [
+            {
+                icon: <Add />,
+                name: 'Añade un producto',
+                handleClick: this.handleChangeStage,
+            },
+            { icon: <AddPhotoAlternate />, name: 'Añade una foto' },
+            { icon: <DeleteIcon />, name: 'Eliminar esta caja' },
+        ];
         const { date, provider, classes, quantity } = this.props;
-        const { icon } = this.state;
         return (
             <div className={classes.container}>
                 <Typography
@@ -57,7 +69,7 @@ class BoxOpened extends Component {
                     {date}
                 </Typography>
 
-                <ListOfProducts items={items} quantity={quantity}/>
+                <ListOfProducts items={items} quantity={quantity} />
 
                 <Button
                     variant='contained'
@@ -69,13 +81,7 @@ class BoxOpened extends Component {
                     Cerrar esta caja
                 </Button>
 
-                <FloatingActionButtons
-                    color='secondary'
-                    aria='add'
-                    icon={icon}
-                    tooltip={'Ingresa un nuevo articulo'}
-                    clickHandler={this.handleChangeStage}
-                />
+                <SpeedDialTooltipOpen actions={actions} />
             </div>
         );
     }

@@ -25,10 +25,11 @@ const items = [
 ];
 
 const Inventory = props => {
+    const category = 'category';
     return (
         <div>
             <NavigationOnInventory />
-            <CategorySubtitle category=' category ' />
+            <CategorySubtitle category={category} />
             <ListOfItems items={items} />
         </div>
     );

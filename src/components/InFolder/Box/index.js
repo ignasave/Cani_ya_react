@@ -22,15 +22,18 @@ class Box extends React.Component {
     };
 
     makeChildrens = items => {
+        const { open } = this.state;
+        const { classes } = this.props;
+
         return items.map((element, index) => {
             return (
                 <Collapse
-                    in={this.state.open}
+                    in={open}
                     key={index}
                     timeout='auto'
                     unmountOnExit>
                     <List component='div' disablePadding>
-                        <ListItem button className={this.props.classes.nested}>
+                        <ListItem button className={classes.nested}>
                             <ListItemIcon>{element.icon}</ListItemIcon>
                             <ListItemText primary={element.provider} />
                         </ListItem>
@@ -41,6 +44,7 @@ class Box extends React.Component {
     };
 
     render() {
+        const { open } = this.state;
         const { title, childrens, classes } = this.props;
 
         return (
@@ -56,8 +60,8 @@ class Box extends React.Component {
                             <Typography
                                 variant='h6'
                                 className={
-                                    this.state.open
-                                        ? this.props.classes.open
+                                    open
+                                        ? classes.open
                                         : null
                                 }
                                 gutterBottom>
@@ -65,7 +69,7 @@ class Box extends React.Component {
                             </Typography>
                         }
                     />
-                    {this.state.open ? <ExpandLess /> : <ExpandMore />}
+                    {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItem>
                 {this.makeChildrens(childrens)}
             </Fragment>
