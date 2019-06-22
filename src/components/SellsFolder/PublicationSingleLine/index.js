@@ -21,6 +21,8 @@ function PublicationSingleLine({ magazine }) {
     );
 }
 
-PublicationSingleLine.propTypes = {};
+PublicationSingleLine.propTypes = {
+    magazine: PropTypes.object.isRequired
+};
 
 export default PublicationSingleLine;

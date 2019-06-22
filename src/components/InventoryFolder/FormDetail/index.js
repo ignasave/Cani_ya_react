@@ -1,50 +1,14 @@
 import React, { useState, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import { Grid, Select, Chip, IconButton } from '@material-ui/core';
 import Input from '@material-ui/core/Input';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useTheme } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Selector from '../../InFolder/Selector';
 import AddPhotoAlternate from '@material-ui/icons/AddPhotoAlternate';
-
-const useStyles = makeStyles(theme => ({
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
-        paddingRight: theme.spacing(2),
-    },
-    chips: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    chip: {
-        margin: 2,
-    },
-    textField: {
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
-    },
-    iconContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    imageInput: {
-        display: 'none',
-    },
-}));
-
-function getStyles(name, tag, theme) {
-    return {
-        fontWeight:
-            tag.indexOf(name) === -1
-                ? theme.typography.fontWeightRegular
-                : theme.typography.fontWeightMedium,
-    };
-}
+import { useStyles } from './styles'
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -60,6 +24,7 @@ const Etiquetas = [
     'Historia',
     'Niños',
 ];
+
 const MenuProps = {
     PaperProps: {
         style: {
@@ -71,7 +36,7 @@ const MenuProps = {
 
 const items = ['', 'Diario', 'Periodico', 'Revista'];
 
-function FormDetail(props) {
+function FormDetail() {
     const classes = useStyles();
     const theme = useTheme();
     const [tag, setTag] = useState([]);
@@ -79,6 +44,14 @@ function FormDetail(props) {
     const [key, setKey] = useState('');
     const [category, setCategory] = useState('');
 
+    const getStyles = (name, tag, theme) => {
+        return {
+            fontWeight:
+                tag.indexOf(name) === -1
+                    ? theme.typography.fontWeightRegular
+                    : theme.typography.fontWeightMedium,
+        };
+    }
     return (
         <Fragment>
             <Grid
