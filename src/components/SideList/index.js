@@ -3,7 +3,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import React from 'react';
 import { RoutesConfig } from '../../RouteSetup';
 import { withStyles } from '@material-ui/core';
@@ -24,12 +24,12 @@ MakeList.propTypes = {
 
 const SideLink = ({ item, classes }) => {
     return (
-        <Link to={item.route} className={classes.link}>
+        <NavLink to={item.route} activeClassName={classes.active} className={classes.link}>
             <ListItem button>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText primary={item.name} />
             </ListItem>
-        </Link>
+        </NavLink>
     );
 };
 

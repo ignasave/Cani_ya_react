@@ -25,6 +25,7 @@ import { Route } from 'react-router-dom';
 import Providers from '../components/ProvidersFolder/Providers';
 import Reports from '../components/ReportsFolder/Reports';
 import NotesComponent from '../components/NotesFolder/Notes'
+import EditDistribution from '../components/DistributionFolder/EditDistibution'
 
 export const ReturnRoutes = () => {
     return RoutesConfig.map((element, index) => {
@@ -45,7 +46,7 @@ export const RoutesConfig = [
         name: 'Inventario',
         icon: <Inbox />,
         inLayout: true,
-        component: ProductDetail,
+        component: EditDistribution,
     },
     {
         route: '/ingreso',

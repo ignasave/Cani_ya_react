@@ -1,7 +1,7 @@
 import React from 'react';
 import NavTabs from '../../SellsFolder/NavTab';
 import ListPart from '../ListPart';
-    // SETED PROPS
+// SETED PROPS
 const listData = [
     {
         hour: '08:00',
@@ -10,17 +10,20 @@ const listData = [
                 publication: 'HOLALA',
                 direction: 'Chacabuco 4956',
                 helper: 'Viejos locos',
+                id: 1,
             },
             {
                 publication: 'Autos del futuro',
                 direction: 'Cordoba 3158',
                 helper: 'Reja negra',
+                id: 2,
             },
             {
                 publication: 'THC',
                 direction: 'datofalso 123',
                 helper:
                     'ayudin skerry te pruebo el sumerio skerio farruko derrutini',
+                id: 3,
             },
         ],
     },
@@ -31,17 +34,20 @@ const listData = [
                 publication: 'HOLALA',
                 direction: 'Chacabuco 4956',
                 helper: 'Viejos locos',
+                id: 4,
             },
             {
                 publication: 'Autos del futuro',
                 direction: 'Cordoba 3158',
                 helper: 'Reja negra',
+                id: 5,
             },
             {
                 publication: 'THC',
                 direction: 'datofalso 123',
                 helper:
                     'ayudin skerry te pruebo el sumerio skerio farruko derrutini',
+                id: 6,
             },
         ],
     },
@@ -52,14 +58,17 @@ const listData = [
                 publication: 'HOLALA',
                 direction: 'Chacabuco 4956',
                 helper: 'Viejos locos',
+                id: 7,
             },
             {
                 publication: 'Autos del futuro',
                 direction: 'Cordoba 3158',
                 helper: 'Reja negra',
+                id: 8,
             },
             {
                 publication: 'THC',
+                id: 9,
                 direction: 'datofalso 123',
                 helper:
                     'ayudin skerry te pruebo el sumerio skerio farruko derrutini',

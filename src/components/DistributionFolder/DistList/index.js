@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { List } from '@material-ui/core';
 import DistListItem from '../DistListItem';
@@ -6,10 +6,34 @@ import Divider from '@material-ui/core/Divider';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import { styles } from './styles';
 import { withStyles } from '@material-ui/core/styles';
+import { SortableElement, SortableContainer } from 'react-sortable-hoc';
+import arrayMove from 'array-move';
 
 function DistList({ listData, classes }) {
-    function makeListItems() {
-        return listData.map((element, index) => {
+    const [list, setList] = useState(listData);
+
+    const SortableItem = SortableElement(({ data, index }) => (
+        <DistListItem data={data} key={index} />
+    ));
+
+    const SortableList = SortableContainer(({ dist }) => {
+        return (
+            <div>
+                {dist.map((element, index) => {
+                    return (
+                        <SortableItem
+                            key={`item-${index}`}
+                            index={index}
+                            data={element}
+                        />
+                    );
+                })}
+            </div>
+        );
+    });
+
+    const makeSorteablesLists = listArray => {
+        return listArray.map((element, index) => {
             return (
                 <Fragment key={element.hour}>
                     <ListSubheader
@@ -18,16 +42,26 @@ function DistList({ listData, classes }) {
                         className={classes.hour}>
                         {element.hour}
                     </ListSubheader>
-                    {element.dist.map((subElement, index) => {
-                        return <DistListItem data={subElement} key={index} />;
-                    })}
-                    {index + 1 !== listData.length ? <Divider /> : null}
+                    <SortableList
+                        dist={element.dist}
+                        onSortEnd={({ oldIndex, newIndex }) => {
+                            onSortEnd(index, oldIndex, newIndex);
+                        }}
+                        pressDelay={200}
+                    />
+                    {index + 1 !== list.length ? <Divider /> : null}
                 </Fragment>
             );
         });
-    }
+    };
 
-    return <List>{makeListItems()}</List>;
+    const onSortEnd = (index, oldIndex, newIndex) => {
+        setList( list.map( (element, i) => {
+            return ( i === index ? {hour: element.hour, dist: arrayMove(list[i].dist, oldIndex, newIndex)} : element)
+        }));
+    };
+    
+    return <List> {makeSorteablesLists(list)} </List>;
 }
 
 DistList.propTypes = {

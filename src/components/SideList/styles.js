@@ -7,4 +7,8 @@ export const styles = theme => ({
       textDecoration: 'none',
       color: '#f50057'
     },
+    active: {
+      textDecoration: 'none',
+      color: theme.palette.secondary.main
+    }
   });

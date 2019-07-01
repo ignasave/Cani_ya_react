@@ -22,7 +22,7 @@ const tabItems = [
     },
 ];
 
-function Sells(props) {
+function Sells() {
     return <NavTabs tabsData={tabItems} />;
 }
 

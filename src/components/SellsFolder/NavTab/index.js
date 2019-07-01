@@ -1,15 +1,9 @@
 import React, { useState, Fragment } from 'react';
-import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import NoSsr from '@material-ui/core/NoSsr';
 import LinkTab from '../LinkTab';
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-    },
-}));
+import { useStyles } from './styles'
 
 function NavTabs({ tabsData }) {
     const classes = useStyles();
@@ -43,7 +37,7 @@ function NavTabs({ tabsData }) {
     return (
         <NoSsr>
             <div className={classes.root}>
-                <AppBar position='static'>
+                <AppBar position='static' className={classes.appbar}>
                     <Tabs
                         variant='fullWidth'
                         value={value}

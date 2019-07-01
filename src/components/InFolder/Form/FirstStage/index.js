@@ -43,6 +43,10 @@ class FirstStage extends Component {
         }
     };
 
+    handleCloseError = () => {
+        this.setState({ showError: false });
+    };
+
     render() {
         const { classes } = this.props;
         const { showError, selectedDate, provider, name } = this.state;
@@ -55,11 +59,11 @@ class FirstStage extends Component {
                     direction='column'
                     justify='center'
                     alignItems='center'>
-                    {showError ? (
-                        <Grid item xs={12} className={classes.datePicker}>
-                            <CustomizedSnackbars />
-                        </Grid>
-                    ) : null}
+                    <CustomizedSnackbars
+                        errorMessage='Hubo un error al cargar los datos, por favor intente nuevamente'
+                        open={showError}
+                        handleClose={this.handleCloseError}
+                    />
 
                     <Grid item xs={12} className={classes.datePicker}>
                         <DatePicker
