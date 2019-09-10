@@ -31,7 +31,7 @@ export const ReturnRoutes = () => {
     return RoutesConfig.map((element, index) => {
         return (
             <Route
-                exact
+                exact={!element.exact}
                 path={element.route}
                 component={element.component}
                 key={index}
@@ -46,7 +46,7 @@ export const RoutesConfig = [
         name: 'Inventario',
         icon: <Inbox />,
         inLayout: true,
-        component: EditDistribution,
+        component: Inventory,
     },
     {
         route: '/ingreso',
@@ -54,6 +54,11 @@ export const RoutesConfig = [
         inLayout: true,
         icon: <Archive />,
         component: In,
+    },
+    {
+        route: '/editDist',
+        inLayout: false,
+        component: EditDistribution
     },
     {
         route: '/ventas',
@@ -71,6 +76,7 @@ export const RoutesConfig = [
     },
     {
         route: '/search',
+        exact: true, 
         inLayout: false,
         component: MagazineSeachList,
     },

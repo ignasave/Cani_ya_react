@@ -35,12 +35,12 @@ function DistList({ listData, classes }) {
     const makeSorteablesLists = listArray => {
         return listArray.map((element, index) => {
             return (
-                <Fragment key={element.hour}>
+                <Fragment key={element.group}>
                     <ListSubheader
                         component='div'
                         align='center'
                         className={classes.hour}>
-                        {element.hour}
+                        {element.group}
                     </ListSubheader>
                     <SortableList
                         dist={element.dist}
@@ -57,7 +57,7 @@ function DistList({ listData, classes }) {
 
     const onSortEnd = (index, oldIndex, newIndex) => {
         setList( list.map( (element, i) => {
-            return ( i === index ? {hour: element.hour, dist: arrayMove(list[i].dist, oldIndex, newIndex)} : element)
+            return ( i === index ? {group: element.group, dist: arrayMove(list[i].dist, oldIndex, newIndex)} : element)
         }));
     };
     

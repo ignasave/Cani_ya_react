@@ -9,15 +9,15 @@ import { withStyles } from '@material-ui/core/styles';
 import { DatePickerSetup } from '../../../Utils/ConfigSetup';
 import Selector from '../../InFolder/Selector';
 import { Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 function ListPart({ listData, classes }) {
-
     const [date, setDate] = React.useState(new Date());
-    const [repartidor, setRepartidor] = React.useState('');
+    const [repartidor, setRepartidor] = React.useState('Todos');
     // SETED PROPS
     const icon = <AddIcon />;
     const tooltip = 'Añadir un nuevo reparto';
-    const items = ['', 'Nacho', 'Jorgelino', 'Abueloso'];
+    const items = ['Todos', 'Nacho', 'Jorgelino', 'Abueloso'];
     const name = 'Repartidor';
 
     return (
@@ -53,14 +53,15 @@ function ListPart({ listData, classes }) {
             </Grid>
 
             <DistList listData={listData} />
-
-            <FloatingActionButtons
-                color='secondary'
-                adria='add'
-                icon={icon}
-                tooltip={tooltip}
-                clickHandler={() => {}}
-            />
+            <Link to='editDist'>
+                <FloatingActionButtons
+                    color='secondary'
+                    adria='add'
+                    icon={icon}
+                    tooltip={tooltip}
+                    clickHandler={() => {}}
+                />
+            </Link>
         </div>
     );
 }

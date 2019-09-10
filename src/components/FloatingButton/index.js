@@ -12,6 +12,7 @@ const FloatingActionButtons = ({
     aria,
     tooltip,
     clickHandler,
+    position = 'corner',
 }) => {
     return (
         <Tooltip title={tooltip} placement='left'>
@@ -19,7 +20,7 @@ const FloatingActionButtons = ({
                 onClick={clickHandler}
                 color={color}
                 aria-label={aria}
-                className={classes.fab}>
+                className={position === 'corner' && classes.fab}>
                 {icon}
             </Fab>
         </Tooltip>

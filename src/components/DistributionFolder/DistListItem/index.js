@@ -14,7 +14,7 @@ function DistListItem({ data }) {
     const [checked, setChecked] = useState(false);
 
     return (
-        <ListItem button onClick={() => setChecked(!checked)}>
+        <ListItem ContainerComponent='ul' button onClick={() => setChecked(!checked)}>
             <ListItemIcon>
                 <Checkbox
                     edge='start'

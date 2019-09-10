@@ -4,7 +4,7 @@ import ListPart from '../ListPart';
 // SETED PROPS
 const listData = [
     {
-        hour: '08:00',
+        group: 'Grupo 1',
         dist: [
             {
                 publication: 'HOLALA',
@@ -28,7 +28,7 @@ const listData = [
         ],
     },
     {
-        hour: '09:00',
+        group: 'Grupo 2',
         dist: [
             {
                 publication: 'HOLALA',
@@ -52,7 +52,7 @@ const listData = [
         ],
     },
     {
-        hour: '10:00',
+        group: 'Grupo 3',
         dist: [
             {
                 publication: 'HOLALA',

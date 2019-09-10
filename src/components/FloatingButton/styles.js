@@ -3,5 +3,5 @@ export const styles = theme => ({
         bottom: theme.spacing(3),
         right: theme.spacing(3),
         position: 'fixed',
-    },
+    }
 });

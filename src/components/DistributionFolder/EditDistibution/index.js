@@ -1,77 +1,104 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { DatePickerSetup } from '../../../Utils/ConfigSetup';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Checkbox from '@material-ui/core/Checkbox';
+import React, { Fragment, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import { DatePicker } from '@material-ui/pickers';
+import PickDateOrDay from '../PickDateOrDay';
+import { makeStyles } from '@material-ui/core/styles';
+import FloatingActionButtons from '../../FloatingButton';
+import { Check } from '@material-ui/icons';
+import Selector from '../../InFolder/Selector';
+import { Link } from 'react-router-dom';
+import Add from '@material-ui/icons/Add';
+import TextField from '@material-ui/core/TextField';
 
-function EditDistribution(props) {
-    const [date, setDate] = React.useState(new Date());
-    const [checked, setChecked] = React.useState(false);
+const useStyles = makeStyles(theme => ({
+    grid: {
+        paddingTop: theme.spacing(3),
+    },
+    a: {
+        textDecoration: 'none',
+    },
+    selector: {
+        padding: 0,
+        margin: 0,
+    },
+}));
+
+function EditDistribution() {
+    const classes = useStyles();
+    const icon = <Check />;
+    const tooltip = 'Confirmar';
+
+    const iconPlus = <Add />;
+    const tooltipPlus = 'Añade un grupo';
+
+    const name = 'Grupo';
+    const [group, setGroup] = useState('');
+    const items = ['Grupo 1', 'Grupo 2', 'Grupo 3'];
+
+    const [isSelector, setIsSelector] = useState(true);
+    const [newGroup, setNewGroup] = useState('');
     return (
-        <Grid container direction='column' justify='center' alignItems='center'>
-            <Grid item xs={6}>
-                <Button variant='outlined'>Persona</Button>
-            </Grid>
-            <Grid item xs={6}>
-                <Button variant='outlined'>Publicacion</Button>
-            </Grid>
-            <Grid item xs={12}>
-                <DatePicker
-                    label='Fecha: '
-                    value={date}
-                    onChange={newDate => setDate(newDate)}
-                    views={DatePickerSetup}
-                    variant='dialog'
-                />
-            </Grid>
-            <Grid item xs={12}>
-                <FormControl component='fieldset'>
-                    <FormLabel component='legend'>
-                        Assign responsibility
-                    </FormLabel>
-                    <FormGroup>
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    checked={checked}
-                                    onChange={() => setChecked(!checked)}
-                                    value='gilad'
-                                />
-                            }
-                            label='Gilad Gray'
+        <Fragment>
+            <Grid
+                spacing={2}
+                container
+                direction='column'
+                justify='center'
+                alignItems='center'
+                className={classes.grid}>
+                <Grid item xs={6}>
+                    <Link to='/search'>
+                        <Button variant='outlined'>Persona</Button>
+                    </Link>
+                </Grid>
+                <Grid item xs={6}>
+                    <Button variant='outlined'>Publicacion</Button>
+                </Grid>
+                <Grid item xs={12}>
+                    {isSelector ? (
+                        <Selector
+                            name={name}
+                            value={group}
+                            items={items}
+                            onChange={grp => {
+                                setGroup(grp);
+                            }}
                         />
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    checked={checked}
-                                    onChange={() => setChecked(!checked)}
-                                    value='jason'
-                                />
-                            }
-                            label='Jason Killian'
+                    ) : (
+                        <TextField
+                            id='standard-name'
+                            label='Name'
+                            value={newGroup}
+                            onChange={event => {
+                                setNewGroup(event.target.value);
+                            }}
+                            margin='normal'
                         />
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    checked={checked}
-                                    onChange={() => setChecked(!checked)}
-                                    value='antoine'
-                                />
-                            }
-                            label='Antoine Llorca'
-                        />
-                    </FormGroup>
-                    <FormHelperText>Be careful</FormHelperText>
-                </FormControl>
+                    )}
+                    <FloatingActionButtons
+                        position='other'
+                        color='secondary'
+                        adria='add'
+                        icon={isSelector ? iconPlus : icon}
+                        tooltip={tooltipPlus}
+                        clickHandler={() => {
+                            setIsSelector(!isSelector);
+                        }}
+                    />
+                </Grid>
+
+                <Grid item xs={12}>
+                    <PickDateOrDay />
+                </Grid>
             </Grid>
-        </Grid>
+            <FloatingActionButtons
+                color='secondary'
+                adria='confirm'
+                icon={icon}
+                tooltip={tooltip}
+                clickHandler={() => {}}
+            />
+        </Fragment>
     );
 }
 
