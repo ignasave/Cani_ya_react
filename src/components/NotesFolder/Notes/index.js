@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid, Paper } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 
-import FloatingActionButtons from '../../FloatingButton';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
 import { useStyles } from './styles';
 
 function NotesComponent(props) {
@@ -38,7 +38,7 @@ function NotesComponent(props) {
                     </Paper>
                 </Grid>
             </Grid>
-            <FloatingActionButtons
+            <FloatingActionButton
                 color='secondary'
                 icon={<AddIcon />}
                 aria='addNote'

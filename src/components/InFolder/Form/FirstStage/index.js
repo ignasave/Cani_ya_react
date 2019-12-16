@@ -7,7 +7,7 @@ import { DatePicker } from '@material-ui/pickers';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { styles } from './styles';
-import CustomizedSnackbars from '../../../ErrorMessage/NewError';
+import ErrorMessage from '../../../../sharedComponents/ErrorMessage';
 import { DatePickerSetup } from '../../../../Utils/ConfigSetup';
 
 /* CONSTANTE DE MUESTRA */ const items = ['', 'Clarin', 'Palena', 'Nacion'];
@@ -59,7 +59,7 @@ class FirstStage extends Component {
                     direction='column'
                     justify='center'
                     alignItems='center'>
-                    <CustomizedSnackbars
+                    <ErrorMessage
                         errorMessage='Hubo un error al cargar los datos, por favor intente nuevamente'
                         open={showError}
                         handleClose={this.handleCloseError}

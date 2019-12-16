@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DistList from '../DistList';
-import FloatingActionButtons from '../../FloatingButton';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
 import AddIcon from '@material-ui/icons/Add';
 import { styles } from './styles';
 import { DatePicker } from '@material-ui/pickers';
@@ -54,7 +54,7 @@ function ListPart({ listData, classes }) {
 
             <DistList listData={listData} />
             <Link to='editDist'>
-                <FloatingActionButtons
+                <FloatingActionButton
                     color='secondary'
                     adria='add'
                     icon={icon}

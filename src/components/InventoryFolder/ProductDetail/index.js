@@ -3,7 +3,7 @@ import React from 'react';
 import Check from '@material-ui/icons/Check';
 
 import FormDetail from '../FormDetail';
-import FloatingButton from '../../FloatingButton';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
  
 function ProductDetail() {
     const color = 'secondary';
@@ -14,7 +14,7 @@ function ProductDetail() {
     return (
         <div>
             <FormDetail />
-            <FloatingButton
+            <FloatingActionButton
                 color={color}
                 aria={aria}
                 icon={icon}

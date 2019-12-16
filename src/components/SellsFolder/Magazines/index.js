@@ -7,7 +7,7 @@ import Search from '@material-ui/icons/Search';
 import { withStyles } from '@material-ui/core/styles';
 
 import { DatePickerSetup } from '../../../Utils/ConfigSetup';
-import FloatingActionButton from '../../FloatingButton';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
 import ListOfNewsPaper from '../ListOfNewsPaper';
 import { styles } from './styles';
 

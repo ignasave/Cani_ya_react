@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import Boxes from '../Boxes';
 import Grade from '@material-ui/icons/Grade';
@@ -36,23 +36,20 @@ const boxes = [
     },
 ];
 
-export default class BoxesOnInventory extends Component {
-    state = {
-        thereIsBoxes: true,
-    };
+const BoxesOnInventory = ({ section }) => {
+    const [thereIsBoxes, setThereIsBoxes] = useState(true);
 
-    render() {
-        const { section } = this.props;
-        return (
-            <div>
-                {thereIsBoxes ? (
-                    <Boxes boxes={boxes} section={section} />
-                ) : (
-                    <Typography component='h2' variant='overline' gutterBottom>
-                        ¡Vaya parece que aun no hay cajas!
-                    </Typography>
-                )}
-            </div>
-        );
-    }
-}
+    return (
+        <div>
+            {thereIsBoxes ? (
+                <Boxes boxes={boxes} section={section} />
+            ) : (
+                <Typography component='h2' variant='overline' gutterBottom>
+                    ¡Vaya parece que aun no hay cajas!
+                </Typography>
+            )}
+        </div>
+    );
+};
+
+export default BoxesOnInventory;

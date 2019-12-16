@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Snackbar from '@material-ui/core/Snackbar';
 
-import MySnackbarContentWrapper from '../SnackBarContentWrapperarContentWrapper'
+import MySnackbarContentWrapper from '../MySnackbarContentWrapper'
 
 function ErrorMessage({ errorMessage, open, handleClose }) {
     return (

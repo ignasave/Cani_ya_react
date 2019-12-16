@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 import ListOfProducts from '../ListOfProducts';
-import SpeedDialTooltipOpen from '../../FloatingButton/SpeedDial';
+import SpeedDialTooltipOpen from '../../../sharedComponents/FloatingButton/SpeedDial';
 import { styles } from './styles';
 
 const items = [

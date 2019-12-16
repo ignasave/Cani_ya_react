@@ -9,7 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core';
 
-import { RoutesConfig } from '../../RouteSetup';
+import { RoutesConfig } from '../../../RouteSetup';
 import { styles } from './styles';
 
 function SideList({ classes }) {

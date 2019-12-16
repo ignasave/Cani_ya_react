@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import PickDateOrDay from '../PickDateOrDay';
 import { makeStyles } from '@material-ui/core/styles';
-import FloatingActionButtons from '../../FloatingButton';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
 import { Check } from '@material-ui/icons';
 import Selector from '../../InFolder/Selector';
 import { Link } from 'react-router-dom';
@@ -75,7 +75,7 @@ function EditDistribution() {
                             margin='normal'
                         />
                     )}
-                    <FloatingActionButtons
+                    <FloatingActionButton
                         position='other'
                         color='secondary'
                         adria='add'
@@ -91,7 +91,7 @@ function EditDistribution() {
                     <PickDateOrDay />
                 </Grid>
             </Grid>
-            <FloatingActionButtons
+            <FloatingActionButton
                 color='secondary'
                 adria='confirm'
                 icon={icon}

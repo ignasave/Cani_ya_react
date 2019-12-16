@@ -13,7 +13,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import Search from '@material-ui/icons/Search';
 import { withStyles } from '@material-ui/core/styles';
 
-import FloatingButton from '../../FloatingButton/index';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
 import Publication from '../Publication';
 import PublicationSingleLine from '../PublicationSingleLine';
 import { styles } from './styles';
@@ -102,7 +102,7 @@ function MagazineSeachList({ classes, simpleList = false }) {
                     </List>
                 </div>
                 {simpleList && (
-                    <FloatingButton
+                    <FloatingActionButton
                         color='secondary'
                         icon={<Add />}
                         tooltip='Añade un nuevo producto'

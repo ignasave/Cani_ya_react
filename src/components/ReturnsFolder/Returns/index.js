@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FloatingActionButtons from '../../FloatingButton';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
 import AddIcon from '@material-ui/icons/Add';
 import Form from '../../InFolder/Form';
 import BoxesOnInventory from '../../InFolder/BoxesOnInventory';
@@ -23,7 +23,7 @@ function Returns() {
             ) : (
                 <div>
                     <BoxesOnInventory section='devoluciones' />
-                    <FloatingActionButtons
+                    <FloatingActionButton
                         color={color}
                         aria={aria}
                         icon={icon}

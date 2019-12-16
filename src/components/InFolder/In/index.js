@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FloatingActionButtons from '../../FloatingButton';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
 import AddIcon from '@material-ui/icons/Add';
 import Form from '../Form';
 import BoxesOnInventory from '../BoxesOnInventory';
@@ -24,7 +24,7 @@ class In extends Component {
                 ) : (
                     <div>
                         <BoxesOnInventory section='cajas' />
-                        <FloatingActionButtons
+                        <FloatingActionButton
                             color='secondary'
                             aria='add'
                             icon={icon}

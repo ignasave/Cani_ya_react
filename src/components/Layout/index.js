@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import SwipeableTemporaryDrawer from './SideNavPage';
-import SideList from '../SideList';
+import SideList from './SideList';
 import TopAppBar from './TopAppBar';
 
 class Layout extends Component {
