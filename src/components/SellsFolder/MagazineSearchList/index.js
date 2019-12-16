@@ -1,20 +1,22 @@
-import React, { Fragment } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { styles } from './styles';
+
+import Add from '@material-ui/icons/Add';
+import Divider  from '@material-ui/core/Divider';
+import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormControl from '@material-ui/core/FormControl';
-import Search from '@material-ui/icons/Search';
 import List from '@material-ui/core/List';
-import { Divider } from '@material-ui/core';
-import Publication from '../Publication';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import PublicationSingleLine from '../PublicationSingleLine';
+import Search from '@material-ui/icons/Search';
+import { withStyles } from '@material-ui/core/styles';
+
 import FloatingButton from '../../FloatingButton/index';
-import Add from '@material-ui/icons/Add';
+import Publication from '../Publication';
+import PublicationSingleLine from '../PublicationSingleLine';
+import { styles } from './styles';
 
 function MagazineSeachList({ classes, simpleList = false }) {
     const [search, setSearch] = React.useState('');
@@ -50,20 +52,20 @@ function MagazineSeachList({ classes, simpleList = false }) {
     const makeMagazines = () => {
         return filteredMagazines.map((magazine, index) => {
             return (
-                <Fragment key={index}>
+                <div key={index}>
                     {simpleList ? (
                         <PublicationSingleLine magazine={magazine} />
                     ) : (
                         <Publication magazine={magazine} />
                     )}
                     {index + 1 !== items.length ? <Divider /> : null}
-                </Fragment>
+                </div>
             );
         });
     };
 
     return (
-        <Fragment>
+        <>
             <Grid
                 container
                 direction='column'
@@ -99,7 +101,7 @@ function MagazineSeachList({ classes, simpleList = false }) {
                         {makeMagazines()}
                     </List>
                 </div>
-                {simpleList ? (
+                {simpleList && (
                     <FloatingButton
                         color='secondary'
                         icon={<Add />}
@@ -107,9 +109,9 @@ function MagazineSeachList({ classes, simpleList = false }) {
                         aria='add a product'
                         clickHandler={() => {}}
                     />
-                ) : null}
+                ) }
             </Grid>
-        </Fragment>
+        </>
     );
 }
 

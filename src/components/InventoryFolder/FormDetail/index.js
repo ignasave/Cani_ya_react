@@ -1,13 +1,18 @@
-import React, { useState, Fragment } from 'react';
-import TextField from '@material-ui/core/TextField';
-import { Grid, Select, Chip, IconButton } from '@material-ui/core';
-import Input from '@material-ui/core/Input';
-import { useTheme } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import Selector from '../../InFolder/Selector';
+import React, { useState } from 'react';
+
 import AddPhotoAlternate from '@material-ui/icons/AddPhotoAlternate';
+import Chip from '@material-ui/core/Chip'
+import FormControl from '@material-ui/core/FormControl';
+import Grid from '@material-ui/core/Grid'
+import IconButton from '@material-ui/core/Button'
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
+import { useTheme } from '@material-ui/core/styles';
+
+import Selector from '../../InFolder/Selector';
 import { useStyles } from './styles'
 
 const ITEM_HEIGHT = 48;
@@ -53,7 +58,7 @@ function FormDetail() {
         };
     }
     return (
-        <Fragment>
+        <>
             <Grid
                 container
                 direction='row'
@@ -149,7 +154,7 @@ function FormDetail() {
                     </FormControl>
                 </Grid>
             </Grid>
-        </Fragment>
+        </>
     );
 }
 

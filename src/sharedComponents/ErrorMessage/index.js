@@ -1,8 +1,11 @@
 import React from 'react';
-import MySnackbarContentWrapper from '../../SnackBar'
+import PropTypes from 'prop-types'
+
 import Snackbar from '@material-ui/core/Snackbar';
 
-function CustomizedSnackbars({ errorMessage, open, handleClose }) {
+import MySnackbarContentWrapper from '../SnackBarContentWrapperarContentWrapper'
+
+function ErrorMessage({ errorMessage, open, handleClose }) {
     return (
         <div>
             <Snackbar
@@ -23,4 +26,10 @@ function CustomizedSnackbars({ errorMessage, open, handleClose }) {
     );
 }
 
-export default CustomizedSnackbars;
+ErrorMessage.propTypes = {
+    errorMessage: PropTypes.string,
+    open: PropTypes.bool,
+    handleClose: PropTypes.func,
+}
+
+export default ErrorMessage;

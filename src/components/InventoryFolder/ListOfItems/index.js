@@ -1,21 +1,8 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import ItemOnInventory from '../ItemOnInventory';
 
-const makeItems = items => {
-    return items.map((element, index) => {
-        return (
-            <Grid item xs={12} key={index}>
-                <ItemOnInventory
-                    name={element.name}
-                    existencies={element.existencies}
-                    price={element.price}
-                    image={element.image}
-                />
-            </Grid>
-        );
-    });
-};
+import Grid from '@material-ui/core/Grid';
+
+import ItemOnInventory from '../ItemOnInventory';
 
 const items = [
     {
@@ -38,7 +25,7 @@ const items = [
     },
 ];
 
-const ListOfItems = props => {
+const ListOfItems = () => {
     return (
         <Grid
             container
@@ -46,7 +33,18 @@ const ListOfItems = props => {
             justify='center'
             alignItems='center'
             spacing={2}>
-            {makeItems(items)}
+            {items.map((element, index) => {
+                return (
+                    <Grid item xs={12} key={index}>
+                        <ItemOnInventory
+                            name={element.name}
+                            existencies={element.existencies}
+                            price={element.price}
+                            image={element.image}
+                        />
+                    </Grid>
+                );
+            })}
         </Grid>
     );
 };

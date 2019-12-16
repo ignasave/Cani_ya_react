@@ -1,25 +1,13 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+
+import { Divider } from '@material-ui/core';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
-import Box from '../Box';
-import { Divider } from '@material-ui/core';
-import { styles } from './styles';
+import { withStyles } from '@material-ui/core/styles';
 
-const makeBoxes = items => {
-    return items.map((element, index) => {
-        return (
-            <Fragment key={index}>
-                <Box
-                    title={element.formatedDate}
-                    childrens={element.childrens}
-                />
-                {index + 1 !== items.length ? <Divider /> : null}
-            </Fragment>
-        );
-    });
-};
+import Box from '../Box';
+import { styles } from './styles';
 
 const Boxes = ({ classes, boxes, section }) => {
     return (
@@ -31,7 +19,17 @@ const Boxes = ({ classes, boxes, section }) => {
                 </ListSubheader>
             }
             className={classes.root}>
-            {makeBoxes(boxes)}
+            {boxes.map((element, index) => {
+                return (
+                    <div key={index}>
+                        <Box
+                            title={element.formatedDate}
+                            childrens={element.childrens}
+                        />
+                        {index + 1 !== boxes.length && <Divider />}
+                    </div>
+                );
+            })}
         </List>
     );
 };

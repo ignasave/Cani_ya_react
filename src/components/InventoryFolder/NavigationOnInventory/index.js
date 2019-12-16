@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import Category from '@material-ui/icons/Category';
+import FormControl from '@material-ui/core/FormControl';
+import Grid from '@material-ui/core/Grid';
+import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormControl from '@material-ui/core/FormControl';
 import Search from '@material-ui/icons/Search';
 import { withStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import Category from '@material-ui/icons/Category';
-import Grid from '@material-ui/core/Grid';
+
 import { styles } from './styles';
 
 function NavigationOnInventory({ classes }) {
-    
     const icon = 'fas fa-barcode';
-
     return (
         <div className={classes.margin}>
             <Grid

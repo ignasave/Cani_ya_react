@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react';
+
 import PropTypes from 'prop-types';
 import ListOfNewsPaper from '../ListOfNewsPaper';
 import { DatePicker } from '@material-ui/pickers';
-import { styles } from './styles';
+import { withStyles } from '@material-ui/core/styles';
+
 import { DatePickerSetup } from '../../../Utils/ConfigSetup';
+import { styles } from './styles';
 
 const items = [
     { name: 'Clarin', secondary: 'Fecha: 04/06/2019' },
@@ -16,7 +18,7 @@ function NewsPaperTab({ classes }) {
     const [date, setDate] = React.useState(new Date());
 
     return (
-        <Fragment>
+        <>
             <div className={classes.datePicker}>
                 <DatePicker
                     label='Fecha: '
@@ -27,7 +29,7 @@ function NewsPaperTab({ classes }) {
                 />
             </div>
             <ListOfNewsPaper items={items} />
-        </Fragment>
+        </>
     );
 }
 

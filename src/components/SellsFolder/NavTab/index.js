@@ -1,7 +1,9 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
+
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import NoSsr from '@material-ui/core/NoSsr';
+
 import LinkTab from '../LinkTab';
 import { useStyles } from './styles'
 
@@ -28,7 +30,7 @@ function NavTabs({ tabsData }) {
     function renderCorrectTab() {
         return tabsData.map((element, index) => {
             if (value === index) {
-                return <Fragment key={index}>{element.component}</Fragment>;
+                return <div key={index}>{element.component}</div>;
             }
             return null;
         });

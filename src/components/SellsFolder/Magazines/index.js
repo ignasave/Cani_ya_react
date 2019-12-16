@@ -1,13 +1,15 @@
-import React, { Fragment } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { DatePicker } from '@material-ui/pickers';
-import { styles } from './styles';
-import Search from '@material-ui/icons/Search';
 import { Link } from 'react-router-dom';
-import ListOfNewsPaper from '../ListOfNewsPaper';
+
+import { DatePicker } from '@material-ui/pickers';
+import Search from '@material-ui/icons/Search';
+import { withStyles } from '@material-ui/core/styles';
+
 import { DatePickerSetup } from '../../../Utils/ConfigSetup';
 import FloatingActionButton from '../../FloatingButton';
+import ListOfNewsPaper from '../ListOfNewsPaper';
+import { styles } from './styles';
 
 function Magazines({ classes }) {
     const [date, setDate] = React.useState(new Date());
@@ -23,7 +25,7 @@ function Magazines({ classes }) {
         { name: 'Caras', secondary: ' Ed: 123' },
     ];
     return (
-        <Fragment>
+        <>
             <div className={classes.datePicker}>
                 <DatePicker
                     label='Fecha: '
@@ -43,7 +45,7 @@ function Magazines({ classes }) {
                     clickHandler={() => {}}
                 />
             </Link>
-        </Fragment>
+        </>
     );
 }
 

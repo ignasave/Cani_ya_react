@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+
 import Fab from '@material-ui/core/Fab';
 import Tooltip from '@material-ui/core/Tooltip';
+import { withStyles } from '@material-ui/core/styles';
+
 import { styles } from './styles';
 
-const FloatingActionButtons = ({
+const FloatingActionButton = ({
     classes,
     color,
     icon,
@@ -13,21 +15,19 @@ const FloatingActionButtons = ({
     tooltip,
     clickHandler,
     position = 'corner',
-}) => {
-    return (
-        <Tooltip title={tooltip} placement='left'>
-            <Fab
-                onClick={clickHandler}
-                color={color}
-                aria-label={aria}
-                className={position === 'corner' && classes.fab}>
-                {icon}
-            </Fab>
-        </Tooltip>
-    );
-};
+}) => (
+    <Tooltip title={tooltip} placement='left'>
+        <Fab
+            onClick={clickHandler}
+            color={color}
+            aria-label={aria}
+            className={position === 'corner' && classes.fab}>
+            {icon}
+        </Fab>
+    </Tooltip>
+);
 
-FloatingActionButtons.propTypes = {
+FloatingActionButton.propTypes = {
     classes: PropTypes.object.isRequired,
     color: PropTypes.string.isRequired,
     icon: PropTypes.element,
@@ -36,4 +36,4 @@ FloatingActionButtons.propTypes = {
     clickHandler: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(FloatingActionButtons);
+export default withStyles(styles)(FloatingActionButton);

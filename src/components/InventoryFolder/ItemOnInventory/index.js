@@ -1,15 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+
+import ButtonBase from '@material-ui/core/ButtonBase';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import ButtonBase from '@material-ui/core/ButtonBase';
+import Divider  from '@material-ui/core/Divider';
+import { withStyles } from '@material-ui/core/styles';
+
 import { styles } from './styles';
-import { Divider } from '@material-ui/core';
 
 function ItemOnInventory({ classes, name, existencies, price, image }) {
     return (
-        <Fragment>
+        <>
             <div className={classes.container}>
                 <Grid container>
                     <Grid item xs={3}>
@@ -39,7 +41,7 @@ function ItemOnInventory({ classes, name, existencies, price, image }) {
                 </Grid>
             </div>
             <Divider />
-        </Fragment>
+        </>
     );
 }
 

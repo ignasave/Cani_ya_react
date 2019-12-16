@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Divider } from '@material-ui/core';
+
 import Add from '@material-ui/icons/Add';
+import Divider from '@material-ui/core/Divider';
 import Remove from '@material-ui/icons/Remove';
-import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
-import IconButton from '@material-ui/core/IconButton';
-import Grid from '@material-ui/core/Grid';
-import { styles } from './styles';
+import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
+
+import { styles } from './styles';
 
 function NewsPaperItem({ classes, name, secText }) {
     const [count, setCount] = useState(0);
@@ -31,7 +33,7 @@ function NewsPaperItem({ classes, name, secText }) {
                 <ListItem>
                     <ListItemText
                         primary={name}
-                        secondary={secText ? secText : null}
+                        secondary={secText && secText}
                     />
                     <ListItemSecondaryAction>
                         <IconButton

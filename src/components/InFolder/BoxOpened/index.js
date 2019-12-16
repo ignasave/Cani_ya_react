@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import ListOfProducts from '../ListOfProducts';
-import AddIcon from '@material-ui/icons/Add';
-import SpeedDialTooltipOpen from '../../FloatingButton/SpeedDial';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
-import SaveAlt from '@material-ui/icons/SaveAlt';
-import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
-import { styles } from './styles';
 
 import Add from '@material-ui/icons/Add';
+import AddIcon from '@material-ui/icons/Add';
 import AddPhotoAlternate from '@material-ui/icons/AddPhotoAlternate';
+import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
+import SaveAlt from '@material-ui/icons/SaveAlt';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+
+import ListOfProducts from '../ListOfProducts';
+import SpeedDialTooltipOpen from '../../FloatingButton/SpeedDial';
+import { styles } from './styles';
 
 const items = [
     {

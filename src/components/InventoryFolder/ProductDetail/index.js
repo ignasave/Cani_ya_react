@@ -1,7 +1,9 @@
 import React from 'react';
+
+import Check from '@material-ui/icons/Check';
+
 import FormDetail from '../FormDetail';
 import FloatingButton from '../../FloatingButton';
-import Check from '@material-ui/icons/Check';
  
 function ProductDetail() {
     const color = 'secondary';
@@ -23,6 +25,5 @@ function ProductDetail() {
     );
 }
 
-ProductDetail.propTypes = {};
 
 export default ProductDetail;

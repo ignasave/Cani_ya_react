@@ -1,4 +1,5 @@
 import React from 'react';
+
 import NavTabs from '../NavTab';
 import NewsPaperTab from '../NewsPaperTab';
 import Magazines from '../Magazines';
@@ -26,6 +27,5 @@ function Sells() {
     return <NavTabs tabsData={tabItems} />;
 }
 
-Sells.propTypes = {};
 
 export default Sells;

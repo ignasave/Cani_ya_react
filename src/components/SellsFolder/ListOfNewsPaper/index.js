@@ -1,22 +1,24 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import NewsPaperItem from '../NewsPaperItem';
 import PropTypes from 'prop-types';
 
-const makeNewsPapers = items => {
-    return items.map((element, index) => {
-        return (
-            <NewsPaperItem
-                name={element.name}
-                secText={element.secondary}
-                key={index}
-            />
-        );
-    });
-};
+import Grid from '@material-ui/core/Grid';
+
+import NewsPaperItem from '../NewsPaperItem';
 
 function ListOfNewsPaper({ items }) {
-    return <Grid container>{makeNewsPapers(items)}</Grid>;
+    return (
+        <Grid container>
+            {items.map((element, index) => {
+                return (
+                    <NewsPaperItem
+                        name={element.name}
+                        secText={element.secondary}
+                        key={index}
+                    />
+                );
+            })}
+        </Grid>
+    );
 }
 
 ListOfNewsPaper.propTypes = {

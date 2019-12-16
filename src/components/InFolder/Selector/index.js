@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+
+import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Select from '@material-ui/core/Select';
-import ReactDOM from 'react-dom';
 import { withStyles } from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
+
 import { styles } from './styles';
 
 class Selector extends Component {

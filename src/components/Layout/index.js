@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import SwipeableTemporaryDrawer from '../SideNavPage';
+
+import SwipeableTemporaryDrawer from './SideNavPage';
 import SideList from '../SideList';
-import TopAppBar from '../TopAppBar';
+import TopAppBar from './TopAppBar';
 
 class Layout extends Component {
     state = {
@@ -33,7 +34,5 @@ class Layout extends Component {
         );
     }
 }
-
-Layout.propTypes = {};
 
 export default Layout;
