@@ -1,6 +1,14 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
+    typography: {
+        fontFamily: [
+            'Roboto',
+            'Source Sans Pro',
+            'sans-serif',
+            'Noto Sans',
+        ].join(',')
+    },
     palette: {
         primary: {
             light: '#757ce8',

@@ -19,7 +19,8 @@ import MagazineSeachList from '../components/SellsFolder/MagazineSearchList';
 import Returns from '../components/ReturnsFolder/Returns';
 import Distribution from '../components/DistributionFolder/Distribution';
 import Clients from '../components/ClientsFolder/Clients'
-import ProductDetail from '../components/InventoryFolder/ProductDetail'
+//import ProductDetail from '../components/InventoryFolder/ProductDetail'
+//import Note from '../components/NotesFolder/Note'
 
 import { Route } from 'react-router-dom';
 import Providers from '../components/ProvidersFolder/Providers';

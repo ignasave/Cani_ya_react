@@ -31,7 +31,7 @@ const Box = ({ title, childrens, classes }) => {
                     primary={
                         <Typography
                             variant='h6'
-                            className={open && classes.open}
+                            className={open ? classes.open : null}
                             gutterBottom>
                             {title}
                         </Typography>

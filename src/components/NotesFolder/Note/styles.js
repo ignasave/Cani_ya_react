@@ -1,0 +1,17 @@
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(theme => ({
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1)
+    },
+    helpBar: {
+        textAlign: 'right',
+        paddingRight: theme.spacing(1)
+    },
+    secondaryIcon: {
+        color: theme.secondary
+    }
+}))
+
+export default useStyles

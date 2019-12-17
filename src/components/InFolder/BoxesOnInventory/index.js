@@ -37,7 +37,7 @@ const boxes = [
 ];
 
 const BoxesOnInventory = ({ section }) => {
-    const [thereIsBoxes, setThereIsBoxes] = useState(true);
+    const [thereIsBoxes] = useState(true);
 
     return (
         <div>

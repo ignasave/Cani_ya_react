@@ -7,8 +7,9 @@ import { withStyles } from '@material-ui/core/styles';
 import { styles } from './styles';
 
 function CategorySubtitle({ category, classes }) {
+
     return (
-        <ListSubheader component='div' align='center' className={classes}>
+        <ListSubheader component='div' align='center' className={classes.subtitle}>
             {category}
         </ListSubheader>
     );
