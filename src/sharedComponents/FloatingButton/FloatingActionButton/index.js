@@ -9,7 +9,7 @@ import { styles } from './styles';
 
 const FloatingActionButton = ({
     classes,
-    color,
+    color = 'secondary',
     icon,
     aria,
     tooltip,
@@ -29,7 +29,7 @@ const FloatingActionButton = ({
 
 FloatingActionButton.propTypes = {
     classes: PropTypes.object.isRequired,
-    color: PropTypes.string.isRequired,
+    color: PropTypes.string,
     icon: PropTypes.element,
     aria: PropTypes.string,
     tooltip: PropTypes.string.isRequired,

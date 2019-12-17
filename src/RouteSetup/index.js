@@ -1,16 +1,14 @@
 import React from 'react';
 
-import {
-    Inbox,
-    Archive,
-    AttachMoney,
-    Undo,
-    Timeline,
-    AssignmentInd,
-    AssignmentReturned,
-    BarChart,
-    Notes,
-} from '@material-ui/icons';
+import Archive from '@material-ui/icons/Archive'
+import AttachMoney from '@material-ui/icons/AttachMoney'
+import AssignmentInd from '@material-ui/icons/AssignmentInd'
+import AssignmentReturned from '@material-ui/icons/AssignmentReturned'
+import BarChart from '@material-ui/icons/BarChart'
+import Inbox from '@material-ui/icons/Inbox'
+import Notes from '@material-ui/icons/Notes'
+import Timeline from '@material-ui/icons/Timeline'
+import Undo from '@material-ui/icons/Undo'
 
 import In from '../components/InFolder/In';
 import Inventory from '../components/InventoryFolder/Inventory';

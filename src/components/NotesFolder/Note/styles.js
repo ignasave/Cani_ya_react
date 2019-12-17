@@ -9,9 +9,6 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'right',
         paddingRight: theme.spacing(1)
     },
-    secondaryIcon: {
-        color: theme.secondary
-    }
 }))
 
 export default useStyles
