@@ -18,7 +18,7 @@ import Returns from '../components/ReturnsFolder/Returns';
 import Distribution from '../components/DistributionFolder/Distribution';
 import Clients from '../components/ClientsFolder/Clients'
 //import ProductDetail from '../components/InventoryFolder/ProductDetail'
-//import Note from '../components/NotesFolder/Note'
+import Note from '../components/NotesFolder/Note'
 
 import { Route } from 'react-router-dom';
 import Providers from '../components/ProvidersFolder/Providers';
@@ -112,6 +112,6 @@ export const RoutesConfig = [
         name: 'Notas',
         inLayout: true,
         icon: <Notes/>,
-        component: NotesComponent,
+        component: Note,
     }
 ];

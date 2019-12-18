@@ -1,3 +1,1 @@
-export const  DatePickerSetup = {
-    views: ['day', 'month', 'year'],
-}
+export const  DatePickerSetup = ['date']
