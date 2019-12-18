@@ -4,7 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import NoSsr from '@material-ui/core/NoSsr';
 
-import LinkTab from '../LinkTab';
+import LinkTab from './LinkTab';
 import { useStyles } from './styles'
 
 function NavTabs({ tabsData }) {

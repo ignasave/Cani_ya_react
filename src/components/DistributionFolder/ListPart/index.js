@@ -1,19 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import DistList from '../DistList';
-import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
-import AddIcon from '@material-ui/icons/Add';
-import { styles } from './styles';
-import { DatePicker } from '@material-ui/pickers';
-import { withStyles } from '@material-ui/core/styles';
-import { DatePickerSetup } from '../../../Utils/ConfigSetup';
-import Selector from '../../InFolder/Selector';
-import { Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
+import AddIcon from '@material-ui/icons/Add';
+import { DatePicker } from '@material-ui/pickers';
+import { Grid } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+
+import { DatePickerSetup } from '../../../Utils/ConfigSetup';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
+import DistList from '../DistList';
+import Selector from '../../InFolder/Selector';
+import { styles } from './styles';
 
 function ListPart({ listData, classes }) {
-    const [date, setDate] = React.useState(new Date());
-    const [repartidor, setRepartidor] = React.useState('Todos');
+    const [date, setDate] = useState(new Date());
+    const [repartidor, setRepartidor] = useState('Todos');
     // SETED PROPS
     const icon = <AddIcon />;
     const tooltip = 'Añadir un nuevo reparto';

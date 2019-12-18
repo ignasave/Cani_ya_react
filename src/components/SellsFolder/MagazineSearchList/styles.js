@@ -6,9 +6,6 @@ export const styles = theme => ({
         textAlign: 'center',
         padding: theme.spacing(3)
     },
-    margin: {
-        margin: theme.spacing(3),
-    },
     grid: {
         padding: theme.spacing(3)
     },

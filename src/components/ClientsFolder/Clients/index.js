@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import Add from '@material-ui/icons/Add';
 
 import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
-import SearchClient from '../SearchClient';
 import ClientList from '../ClientList';
+
+import useSearch from '../../../Utils/searchHook';
+import SearchComponent from '../../../sharedComponents/SearchComponent';
 
 const clients = [
     { name: 'pelitos' },
@@ -16,20 +18,16 @@ const clients = [
 ];
 
 function Clients(props) {
-    const [search, setSearch] = useState('');
-    const [filteredClients, setFilteredClients] = useState(clients);
 
-    useEffect(() => {
-        setFilteredClients(
-            clients.filter(
-                element => element.name.toLowerCase().indexOf(search) !== -1
-            )
-        );
-    }, [search]);
+    const [ filteredClients, setSearch ] = useSearch(clients);
 
     return (
         <>
-            <SearchClient search={search} setSearch={setSearch} />
+            <SearchComponent
+                title="cliente"
+                setSearch={ setSearch }
+                flex
+            />
             <ClientList clients={filteredClients} />
             <FloatingActionButton
                 icon={<Add />}

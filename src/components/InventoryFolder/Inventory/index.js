@@ -4,6 +4,8 @@ import CategorySubtitle from '../CategorySubtitle';
 import ListOfItems from '../ListOfItems';
 import NavigationOnInventory from '../NavigationOnInventory';
 
+import useSearch from '../../../Utils/searchHook';
+
 const items = [
     {
         name: '!HOLA',
@@ -27,13 +29,17 @@ const items = [
 
 const Inventory = () => {
     const category = 'category';
+
+    const [ filteredItems, setSearch ] = useSearch(items);
+
     return (
         <>
-            <NavigationOnInventory />
+            <NavigationOnInventory setSearch={ setSearch } />
             <CategorySubtitle category={category} />
-            <ListOfItems items={items} />
+            <ListOfItems items={filteredItems} />
         </>
     );
 };
 
 export default Inventory;
+

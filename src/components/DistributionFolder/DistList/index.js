@@ -1,13 +1,15 @@
-import React, { Fragment, useState } from 'react';
+import arrayMove from 'array-move';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { SortableElement, SortableContainer } from 'react-sortable-hoc';
+
 import { List } from '@material-ui/core';
-import DistListItem from '../DistListItem';
 import Divider from '@material-ui/core/Divider';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import { styles } from './styles';
 import { withStyles } from '@material-ui/core/styles';
-import { SortableElement, SortableContainer } from 'react-sortable-hoc';
-import arrayMove from 'array-move';
+
+import DistListItem from '../DistListItem';
+import { styles } from './styles';
 
 function DistList({ listData, classes }) {
     const [list, setList] = useState(listData);
@@ -35,7 +37,7 @@ function DistList({ listData, classes }) {
     const makeSorteablesLists = listArray => {
         return listArray.map((element, index) => {
             return (
-                <Fragment key={element.group}>
+                <div key={element.group}>
                     <ListSubheader
                         component='div'
                         align='center'
@@ -50,7 +52,7 @@ function DistList({ listData, classes }) {
                         pressDelay={200}
                     />
                     {index + 1 !== list.length ? <Divider /> : null}
-                </Fragment>
+                </div>
             );
         });
     };

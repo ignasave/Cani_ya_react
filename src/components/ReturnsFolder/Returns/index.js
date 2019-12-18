@@ -10,7 +10,6 @@ function Returns() {
     const icon = <AddIcon />;
     const aria = 'add';
     const tooltip = 'Abre una nueva caja para devolucion';
-    const color = 'secondary';
 
     const handeUseShowForm = state => {
         useShowForm(state);
@@ -24,7 +23,6 @@ function Returns() {
                 <div>
                     <BoxesOnInventory section='devoluciones' />
                     <FloatingActionButton
-                        color={color}
                         aria={aria}
                         icon={icon}
                         tooltip={tooltip}

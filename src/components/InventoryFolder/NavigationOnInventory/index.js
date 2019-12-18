@@ -2,18 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Category from '@material-ui/icons/Category';
-import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Search from '@material-ui/icons/Search';
 import { withStyles } from '@material-ui/core/styles';
 
 import { styles } from './styles';
 
-function NavigationOnInventory({ classes }) {
+import SearchComponent from '../../../sharedComponents/SearchComponent';
+
+function NavigationOnInventory({ classes, setSearch }) {
     const icon = 'fas fa-barcode';
     return (
         <div className={classes.margin}>
@@ -35,19 +32,10 @@ function NavigationOnInventory({ classes }) {
                     </IconButton>
                 </Grid>
                 <Grid item xs={8}>
-                    <FormControl className={classes.margin}>
-                        <InputLabel htmlFor='search_product'>
-                            Buscar un producto
-                        </InputLabel>
-                        <Input
-                            id='search_product'
-                            startAdornment={
-                                <InputAdornment position='start'>
-                                    <Search />
-                                </InputAdornment>
-                            }
-                        />
-                    </FormControl>
+                    <SearchComponent
+                        title="producto"
+                        setSearch={ setSearch }
+                    />
                 </Grid>
             </Grid>
         </div>

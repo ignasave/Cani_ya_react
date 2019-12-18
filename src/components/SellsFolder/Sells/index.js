@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavTabs from '../NavTab';
+import NavTabs from '../../../sharedComponents/NavTab';
 import NewsPaperTab from '../NewsPaperTab';
 import Magazines from '../Magazines';
 import Periodics from '../Periodics'

@@ -3,14 +3,9 @@ import PropTypes from 'prop-types';
 
 import Add from '@material-ui/icons/Add';
 import Divider  from '@material-ui/core/Divider';
-import FormControl from '@material-ui/core/FormControl';
 import Grid from '@material-ui/core/Grid';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import List from '@material-ui/core/List';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import Search from '@material-ui/icons/Search';
 import { withStyles } from '@material-ui/core/styles';
 
 import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
@@ -18,8 +13,10 @@ import Publication from '../Publication';
 import PublicationSingleLine from '../PublicationSingleLine';
 import { styles } from './styles';
 
+import SearchComponent from '../../../sharedComponents/SearchComponent';
+import useSearch from '../../../Utils/searchHook';
+
 function MagazineSeachList({ classes, simpleList = false }) {
-    const [search, setSearch] = React.useState('');
 
     const items = [
         {
@@ -45,9 +42,8 @@ function MagazineSeachList({ classes, simpleList = false }) {
         },
     ];
 
-    let filteredMagazines = items.filter(magazine => {
-        return magazine.name.toLowerCase().indexOf(search) !== -1;
-    });
+    const [ filteredMagazines, setSearch ] = useSearch(items);
+
 
     const makeMagazines = () => {
         return filteredMagazines.map((magazine, index) => {
@@ -74,21 +70,10 @@ function MagazineSeachList({ classes, simpleList = false }) {
                 spacing={3}
                 className={classes.grid}>
                 <div className={classes.reduce}>
-                    <FormControl className={classes.margin}>
-                        <InputLabel htmlFor='search_product'>
-                            Buscar un producto
-                        </InputLabel>
-                        <Input
-                            id='search_product'
-                            value={search}
-                            onChange={e => setSearch(e.target.value)}
-                            startAdornment={
-                                <InputAdornment position='start'>
-                                    <Search />
-                                </InputAdornment>
-                            }
-                        />
-                    </FormControl>
+                    <SearchComponent
+                        title="producto"
+                        setSearch={ setSearch }
+                    />
                 </div>
                 <div className={classes.list}>
                     <List
