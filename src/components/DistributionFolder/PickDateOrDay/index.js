@@ -1,14 +1,15 @@
-import React, { useState, Fragment } from 'react';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { DatePickerSetup } from '../../../Utils/ConfigSetup';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import Checkbox from '@material-ui/core/Checkbox';
+import React, { useState } from 'react';
+
 import { DatePicker } from '@material-ui/pickers';
+import { DatePickerSetup } from '../../../Utils/ConfigSetup';
+import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormLabel from '@material-ui/core/FormLabel';
 import Grid from '@material-ui/core/Grid';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormGroup from '@material-ui/core/FormGroup';
+import Radio from '@material-ui/core/Radio';
+import Checkbox from '@material-ui/core/Checkbox';
 
 function PickDateOrDay() {
     const [dateOrDay, setDateOrDay] = useState('days');
@@ -28,7 +29,7 @@ function PickDateOrDay() {
     };
 
     return (
-        <Fragment>
+        <>
             <RadioGroup
                 aria-label='dateOrDay'
                 name='dateOrDay'
@@ -156,7 +157,7 @@ function PickDateOrDay() {
                     </Grid>
                 )}
             </Grid>
-        </Fragment>
+        </>
     );
 }
 

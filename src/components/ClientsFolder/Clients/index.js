@@ -4,7 +4,7 @@ import Add from '@material-ui/icons/Add';
 
 import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
 import ClientList from '../ClientList';
-import useSearch from '../../../Utils/searchHook';
+import useSearch from '../../../hooks/searchHook';
 import SearchComponent from '../../../sharedComponents/SearchComponent';
 
 const clients = [

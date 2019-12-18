@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {
-    ListItem,
-    ListItemIcon,
-    Checkbox,
-    ListItemText,
-    ListItemSecondaryAction,
-    IconButton,
-} from '@material-ui/core';
-import { MoreVert } from '@material-ui/icons/';
+
+import Checkbox from '@material-ui/core/Checkbox'
+import IconButton from '@material-ui/core/IconButton'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItemText from '@material-ui/core/ListItemText'
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
+import MoreVert  from '@material-ui/icons/MoreVert';
 
 function DistListItem({ data }) {
     const [checked, setChecked] = useState(false);

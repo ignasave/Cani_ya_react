@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-    List,
-    ListSubheader,
-    ListItem,
-    ListItemText,
-    Typography,
-    Divider
-} from '@material-ui/core';
 
-import useStyles from './styles'
+import Divider from '@material-ui/core/Divider';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import Typography from '@material-ui/core/Typography';
+
+import useStyles from './styles';
 
 const history = [
     {
@@ -60,39 +59,40 @@ const history = [
 ];
 
 const ClientHistory = props => {
-    const classes = useStyles()
+    const classes = useStyles();
     return (
         <>
-            {history.map((item, index) => (
-                <>
-                <List
-                    subheader={
-                        <ListSubheader component='div'>
-                            {item.date}
-                        </ListSubheader>
-                    }>
-                    {item.purchases.map((element, eIndex) => (
-                        <ListItem className={classes.margin}>
-                            <ListItemText
-                                primary={element.name}
-                                secondary={
-                                    <>
-                                        ${element.price} <br />
-                                        {element.subsription && (
-                                            <Typography
-                                                component='p'
-                                                variant='body2'>
-                                                Subscripcion
-                                            </Typography>
-                                        )}
-                                    </>
-                                }
-                            />
-                        </ListItem>
-                    ))}
-                </List>
-                {history.length !== index - 1 && <Divider/>}
-                </>
+            {history.map(item => (
+                <div key={`day[${item.date}]`}>
+                    <List
+                        subheader={
+                            <ListSubheader component='div'>
+                                {item.date}
+                            </ListSubheader>
+                        }>
+                        {item.purchases.map(element => (
+                            <ListItem
+                                className={classes.margin}
+                                key={`item[${element.name}]`}>
+                                <ListItemText
+                                    primary={element.name}
+                                    secondary={
+                                        <>
+                                            ${element.price} <br />
+                                            {element.subsription && (
+                                                <Typography
+                                                    component='span'
+                                                    variant='body2'>
+                                                    Subscripcion
+                                                </Typography>
+                                            )}
+                                        </>
+                                    }
+                                />
+                            </ListItem>
+                        ))}
+                    </List>
+                </div>
             ))}
         </>
     );

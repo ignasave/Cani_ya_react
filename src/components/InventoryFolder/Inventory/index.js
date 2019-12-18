@@ -4,7 +4,7 @@ import CategorySubtitle from '../CategorySubtitle';
 import ListOfItems from '../ListOfItems';
 import NavigationOnInventory from '../NavigationOnInventory';
 
-import useSearch from '../../../Utils/searchHook';
+import useSearch from '../../../hooks/searchHook';
 
 const items = [
     {

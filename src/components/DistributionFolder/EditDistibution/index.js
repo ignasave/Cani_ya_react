@@ -1,14 +1,16 @@
-import React, { Fragment, useState } from 'react';
-import Grid from '@material-ui/core/Grid';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import Add from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
+import Check from '@material-ui/icons/Check';
+import Grid from '@material-ui/core/Grid';
 import PickDateOrDay from '../PickDateOrDay';
 import { makeStyles } from '@material-ui/core/styles';
-import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
-import { Check } from '@material-ui/icons';
-import Selector from '../../InFolder/Selector';
-import { Link } from 'react-router-dom';
-import Add from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
+
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
+import Selector from '../../InFolder/Selector';
 
 const useStyles = makeStyles(theme => ({
     grid: {
@@ -38,7 +40,7 @@ function EditDistribution() {
     const [isSelector, setIsSelector] = useState(true);
     const [newGroup, setNewGroup] = useState('');
     return (
-        <Fragment>
+        <>
             <Grid
                 spacing={2}
                 container
@@ -98,7 +100,7 @@ function EditDistribution() {
                 tooltip={tooltip}
                 clickHandler={() => {}}
             />
-        </Fragment>
+        </>
     );
 }
 

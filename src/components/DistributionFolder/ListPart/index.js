@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import AddIcon from '@material-ui/icons/Add';
-import { DatePicker } from '@material-ui/pickers';
+import DatePicker from '@material-ui/pickers/DatePicker';
 import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 

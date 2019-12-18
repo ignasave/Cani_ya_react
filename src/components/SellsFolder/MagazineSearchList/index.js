@@ -14,7 +14,7 @@ import PublicationSingleLine from '../PublicationSingleLine';
 import { styles } from './styles';
 
 import SearchComponent from '../../../sharedComponents/SearchComponent';
-import useSearch from '../../../Utils/searchHook';
+import useSearch from '../../../hooks/searchHook';
 
 function MagazineSeachList({ classes, simpleList = false }) {
 

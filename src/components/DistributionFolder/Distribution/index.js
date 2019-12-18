@@ -1,6 +1,8 @@
 import React from 'react';
+
 import NavTabs from '../../../sharedComponents/NavTab';
 import ListPart from '../ListPart';
+
 // SETED PROPS
 const listData = [
     {
