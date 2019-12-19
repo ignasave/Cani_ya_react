@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import AddIcon from '@material-ui/icons/Add';
-import DatePicker from '@material-ui/pickers/DatePicker';
+import { DatePicker } from '@material-ui/pickers';
 import { Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -34,7 +34,7 @@ function ListPart({ listData, classes }) {
                 <Grid item xs={12}>
                     <div className={classes.datePicker}>
                         <DatePicker
-                            label='Fecha: '
+                            label='Fecha : '
                             value={date}
                             onChange={newDate => setDate(newDate)}
                             views={DatePickerSetup}
