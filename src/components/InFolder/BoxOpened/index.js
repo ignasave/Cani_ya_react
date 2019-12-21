@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import Add from '@material-ui/icons/Add';
-import AddIcon from '@material-ui/icons/Add';
 import AddPhotoAlternate from '@material-ui/icons/AddPhotoAlternate';
 import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -32,66 +30,52 @@ const items = [
     },
 ];
 
-class BoxOpened extends Component {
-    state = {
-        icon: <AddIcon />,
-    };
+const BoxOpened = ({ location, history, classes }) => {
+    const { state:{ date, provider, quantity } } = location;
 
-    handleChangeStage = () => {
-        this.props.changeStage({ stage: 'second' });
-    };
+    const actions = [
+        {
+            icon: <Add />,
+            name: 'Añade un producto',
+            handleClick: () => history.push({ pathname:'/search', state:{ simpleList: true } }),
+        },
+        { icon: <AddPhotoAlternate />, name: 'Añade una foto' },
+        { icon: <DeleteIcon />, name: 'Eliminar esta caja' },
+    ];
 
-    handleCloseBox = () => {
-        this.props.handleShowForm(false);
-    };
-
-    render() {
-        const actions = [
-            {
-                icon: <Add />,
-                name: 'Añade un producto',
-                handleClick: this.handleChangeStage,
-            },
-            { icon: <AddPhotoAlternate />, name: 'Añade una foto' },
-            { icon: <DeleteIcon />, name: 'Eliminar esta caja' },
-        ];
-        const { date, provider, classes, quantity } = this.props;
-        return (
-            <div className={classes.container}>
-                <Typography
-                    variant='h4'
-                    gutterBottom
-                    align='center'
-                    className={classes.title}>
-                    {provider}
-                </Typography>
-
-                <Typography variant='body2' gutterBottom>
-                    {date}
-                </Typography>
-
-                <ListOfProducts items={items} quantity={quantity} />
-
-                <Button
-                    variant='contained'
-                    color='primary'
-                    aria-label='Close'
-                    className={classes.margin}
-                    onClick={this.handleCloseBox}>
-                    <SaveAlt className={classes.extendedIcon} />
-                    Cerrar esta caja
-                </Button>
-
-                <SpeedDialTooltipOpen actions={actions} />
-            </div>
-        );
+    const handleCloseBox = () => {
+        history.push('/ingreso')
     }
-}
 
-BoxOpened.propTypes = {
-    classes: PropTypes.object.isRequired,
-    date: PropTypes.string.isRequired,
-    provider: PropTypes.string.isRequired,
-};
+    return (
+        <div className={classes.container}>
+            <Typography
+                variant='h4'
+                gutterBottom
+                align='center'
+                className={classes.title}>
+                {provider}
+            </Typography>
+
+            <Typography variant='body2' gutterBottom>
+                {date}
+            </Typography>
+
+            <ListOfProducts items={items} quantity={ quantity } />
+
+            <Button
+                variant='contained'
+                color='primary'
+                aria-label='Close'
+                className={classes.margin}
+                onClick={handleCloseBox}>
+                <SaveAlt className={classes.extendedIcon} />
+                Cerrar esta caja
+            </Button>
+
+            <SpeedDialTooltipOpen actions={actions} />
+        </div>
+    )
+}
 
 export default withStyles(styles)(BoxOpened);

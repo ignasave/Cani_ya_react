@@ -1,43 +1,22 @@
-import React, { Component } from 'react';
-import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import AddIcon from '@material-ui/icons/Add';
-import Form from '../Form';
+import FloatingActionButton from '../../../sharedComponents/FloatingButton/FloatingActionButton';
 import BoxesOnInventory from '../BoxesOnInventory';
 
-class In extends Component {
-    state = {
-        icon: <AddIcon />,
-        showForm: false,
-        tooltip: 'Abre una nueva caja',
-    };
-
-    handleShowForm = state => {
-        this.setState({ showForm: state });
-    };
-
-    render() {
-        const { showForm, icon, tooltip } = this.state;
-        return (
-            <div>
-                {showForm ? (
-                    <Form handleMostrarForm={this.handleShowForm} />
-                ) : (
-                    <div>
-                        <BoxesOnInventory section='cajas' />
-                        <FloatingActionButton
-                            color='secondary'
-                            aria='add'
-                            icon={icon}
-                            tooltip={tooltip}
-                            clickHandler={() => {
-                                this.handleShowForm(true);
-                            }}
-                        />
-                    </div>
-                )}
-            </div>
-        );
-    }
-}
+const In = () => (
+    <>
+        <BoxesOnInventory section='cajas' />
+        <Link to={{ pathname: '/form/first', state: { from: false } }}>
+            <FloatingActionButton
+                color='secondary'
+                aria='add'
+                icon={ <AddIcon /> }
+                tooltip='Abre una nueva caja'
+                clickHandler={() => {} }
+            />
+        </Link>
+    </>
+);
 
 export default In;

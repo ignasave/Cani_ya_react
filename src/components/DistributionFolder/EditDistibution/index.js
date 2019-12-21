@@ -49,7 +49,7 @@ function EditDistribution() {
                 alignItems='center'
                 className={classes.grid}>
                 <Grid item xs={6}>
-                    <Link to='/search'>
+                    <Link to={{ pathname:'/search', state: { simpleList: false } }}>
                         <Button variant='outlined'>Persona</Button>
                     </Link>
                 </Grid>

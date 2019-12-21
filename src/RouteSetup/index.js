@@ -10,6 +10,8 @@ import Notes from '@material-ui/icons/Notes'
 import Timeline from '@material-ui/icons/Timeline'
 import Undo from '@material-ui/icons/Undo'
 
+import BoxOpened from '../components/InFolder/BoxOpened';
+import FirstStage from '../components/InFolder/Form/FirstStage';
 import In from '../components/InFolder/In';
 import Inventory from '../components/InventoryFolder/Inventory';
 import Sells from '../components/SellsFolder/Sells';
@@ -115,5 +117,15 @@ export const RoutesConfig = [
         inLayout: true,
         icon: <Notes/>,
         component: NotesComponent,
+    },
+    {
+        route: '/form/first',
+        inLayout: true,
+        component: FirstStage
+    },
+    {
+        route: '/ingreso/menu',
+        inLayout: true,
+        component: BoxOpened
     }
 ];

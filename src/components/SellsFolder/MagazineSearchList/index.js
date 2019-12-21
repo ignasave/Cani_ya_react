@@ -16,7 +16,7 @@ import { styles } from './styles';
 import SearchComponent from '../../../sharedComponents/SearchComponent';
 import useSearch from '../../../hooks/searchHook';
 
-function MagazineSeachList({ classes, simpleList = false }) {
+function MagazineSeachList({ classes, location }) {
 
     const items = [
         {
@@ -44,6 +44,9 @@ function MagazineSeachList({ classes, simpleList = false }) {
 
     const [ filteredMagazines, setSearch ] = useSearch(items);
 
+    const { state } = location;
+
+    const simpleList = state.simpleList ? state.simpleList : false;
 
     const makeMagazines = () => {
         return filteredMagazines.map((magazine, index) => {

@@ -36,7 +36,7 @@ function Magazines({ classes }) {
                 />
             </div>
             <ListOfNewsPaper items={items} />
-            <Link to='/search'>
+            <Link to={{ pathname:'/search', state: { simpleList: false } }}>
                 <FloatingActionButton
                     color={color}
                     icon={icon}
