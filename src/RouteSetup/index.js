@@ -124,7 +124,7 @@ export const RoutesConfig = [
         component: FirstStage
     },
     {
-        route: '/ingreso/menu',
+        route: '/caja',
         inLayout: true,
         component: BoxOpened
     }

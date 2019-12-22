@@ -31,7 +31,7 @@ const items = [
 ];
 
 const BoxOpened = ({ location, history, classes }) => {
-    const { state:{ date, provider, quantity } } = location;
+    const { state:{ date, provider, quantity, from } } = location;
 
     const actions = [
         {
@@ -44,7 +44,11 @@ const BoxOpened = ({ location, history, classes }) => {
     ];
 
     const handleCloseBox = () => {
-        history.push('/ingreso')
+        if (from === 'ingreso') {
+            history.push('/ingreso');
+        } else if(from === 'returns') {
+            history.push('/devoluciones');
+        }
     }
 
     return (

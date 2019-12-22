@@ -31,7 +31,7 @@ const FirstStage = ({ classes, history, location }) => {
 
     const handleClick = () => {
         if(provider !== '') {
-            history.push({ pathname:'/ingreso/menu', state: { date: data.date, provider, quantity: state.from === 'returns' } })
+            history.push({ pathname:'/caja', state: { date: data.date, provider, quantity: state.from === 'returns', from: state.from } })
         } else {
             setData({ ...data, showError: true })
         }

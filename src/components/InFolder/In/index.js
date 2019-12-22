@@ -7,7 +7,7 @@ import BoxesOnInventory from '../BoxesOnInventory';
 const In = () => (
     <>
         <BoxesOnInventory section='cajas' />
-        <Link to={{ pathname: '/form/first', state: { from: false } }}>
+        <Link to={{ pathname: '/form/first', state: { from: 'ingreso' } }}>
             <FloatingActionButton
                 color='secondary'
                 aria='add'
