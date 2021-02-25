@@ -26,7 +26,7 @@
     "@material-ui/lab": "^4.0.0-alpha.36",
     "@material-ui/pickers": "^3.2.8",
     "array-move": "^2.2.1",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "connected-react-router": "4.5.0",
     "date-fns": "^2.8.1",
     "material-ui-next-pickers": "0.0.20",
